@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'gallery',
     'news',
     'contact',
+    'sass_processor',
+
 ]
 
 MIDDLEWARE = [
@@ -121,6 +123,30 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    BASE_DIR / 'home/static/home',
+    BASE_DIR / 'gallery/static/gallery',
+    BASE_DIR / 'news/static/news',
+    BASE_DIR / 'contact/static/contact',
+    BASE_DIR / 'static_pages/about/static/about',
+    BASE_DIR / 'static_pages/plan/static/plan',
+]
+
+# SASS セッティング
+SASS_PROCESSOR_ENABLED = True
+SASS_PROCESSOR_ROOT = STATICFILES_DIRS[0]
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+    'sass_processor.finders.CssFinder',
+]
+
+# Media files (アップロードファイル)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
