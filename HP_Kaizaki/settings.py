@@ -134,6 +134,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static_pages/plan/static/plan',
 ]
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # SASS セッティング
 SASS_PROCESSOR_ENABLED = True
 SASS_PROCESSOR_ROOT = STATICFILES_DIRS[0]
