@@ -1,89 +1,110 @@
-
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div id="global-container">
-    <div id="container">
-      <div class="mobile-menu__cover"></div>
-      <header class="header">
-        <div class="header__inner">
-          <div class="logo">
-            <span class="logo__sentence">与える写真</span>
-          </div>
-          <nav class="header__nav">
-            <ul class="header__ul">
-              <li class="header__li"><a href="#.html">About</a></li>
-              <li class="header__li"><a href="#.html">Gallery</a></li>
-              <li class="header__li"><a href="#.html">Plan</a></li>
-              <li class="header__li"><a href="https://kobayanskilab.stores.jp/">Preset</a></li>
-              <li class="header__li"><a href="#.html">News</a></li>
-              <li class="header__li"><a href="#.html">Contact</a></li>
-            </ul>
-          </nav>
-          <button class="mobile-menu_btn">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+
+    {% comment %} フォント開始 {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    {% comment %} フォント終了 {% endcomment %}
+
+  </head>
+
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <div class="mobile-menu__cover"></div>
+
+        {% comment %} ヘッダー開始 {% endcomment %}
+        <header class="main_h">
+          <div class="row">
+              <div class="logo">
+                  <span class="logo__sentence">与える写真</span>
+              </div>
+              <div class="mobile-toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+              <nav class="header__nav">
+                  <ul class="header__ul">
+                      <li class="header__li"><a href="#about">About</a></li>
+                      <li class="header__li"><a href="#gallery">Gallery</a></li>
+                      <li class="header__li"><a href="#plan">Plan</a></li>
+                      <li class="header__li"><a href="https://kobayanskilab.stores.jp/">Preset</a></li>
+                      <li class="header__li"><a href="#news">News</a></li>
+                      <li class="header__li"><a href="#contact">Contact</a></li>
+                  </ul>
+              </nav>
+          </div> 
+        </header>
+        {% comment %} ヘッダー終了 {% endcomment %}
+
         
-      </header>
-    </div>
+        <main>
+          {% comment %} トップ画像開始 {% endcomment %}
+          <section class="top">
+            <h1 class="top__name">Kaizaki Maria</h1>
+            <div class="top__inner">
+              <div class="top__left">
+                <img src="{% static 'home/images/14.jpg' %}" class="top__image-left">
+                <span class="top__vertical-left">与える写真 </span>
+              </div>
+              <div class="top__right">
+                <img src="{% static 'home/images/07-2.jpg' %}" class="top__image-right">
+                <span class="top__vertical-right">PHOTOGRAPHER</span>
+              </div>
+            </div>
+          </section>
+          {% comment %} トップ画像終了 {% endcomment %}
 
+          {% comment %} 紹介開始 {% endcomment %}
+          <section class="introduce">
+            <div class="introduce__inner">
+              <div class="introduce__image">
+                <img src="{% static 'home/images/03.jpg' %}" alt="">
+              </div>
+              <div class="introduce__sentence">
+                <h1 class="title">"撮る"ものではなく<br>
+                  "与える"ものでありたい<br><br></h1>
+                <span class="introduce__jpn">
+                  無限の刻を閉じ込めた一枚<br>
+                  未来の君にその瞬間の魂を捧げる<br>
+                  ただの記憶ではなく、心を震わせる力<br>
+                  それが私の「与える写真」<br><br>
+                </span>
+                <span class="introduce__eng">
+                  A single frame, imprisoning the endless flow og time. <br>
+                  To your future self, I offer the soul of that fleeting moment. <br>
+                  Not just a mere record, but a force that shakes the very core of your being. <br>
+                  This is my "Gifted Photography".
+                </span>
+              </div>
+            </div>
+          </section>
+          {% comment %} 紹介終了 {% endcomment %}
+        </main>
+        
 
-    {% comment %} モバイルメニュー開始 {% endcomment %}
-    <nav class="mobile-menu">
-      <div class="logo">
-        <span class="logo__stay">Kaizaki</span>
-        <span class="logo__world">Photo</span>
       </div>
-      <ul class="mobile-menu__main">
-        <li class="mobile-menu__item">
-          <a class="mobile-menu__link" href="#">
-            <span class="main-title">About</span>
-            <span class="sub-title">私について</span>
-          </a>
-        </li>
-        <li class="mobile-menu__item">
-          <a class="mobile-menu__link" href="#">
-            <span class="main-title">Gallery</span>
-            <span class="sub-title">ギャラリー</span>
-          </a>
-        </li>
-        <li class="mobile-menu__item">
-          <a class="mobile-menu__link" href="#">
-            <span class="main-title">Plan</span>
-            <span class="sub-title">撮影・レッスンプラン</span>
-          </a>
-        </li>
-        <li class="mobile-menu__item">
-          <a class="mobile-menu__link" href="#">
-            <span class="main-title">Preset</span>
-            <span class="sub-title">プリセット販売</span>
-          </a>
-        </li>
-        <li class="mobile-menu__item">
-          <a class="mobile-menu__link" href="#">
-            <span class="main-title">News</span>
-            <span class="sub-title">お知らせ</span>
-          </a>
-        </li>
-        <li class="mobile-menu__item">
-          <a class="mobile-menu__link" href="#">
-            <span class="main-title">Contact</span>
-            <span class="sub-title">お問い合わせ</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    {% comment %} モバイルメニュー終了 {% endcomment %}
-  </div>
-  
-</body>
+    </div>
+    
+    <script src="{% static 'home/js/home.js' %}"></script>
+  </body>
 </html>
