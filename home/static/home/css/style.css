@@ -35,7 +35,7 @@ body {
 }
 
 .logo {
-  width: 50px;
+  width: 200px;
   font-size: 25px;
   color: #8f8f8f;
   text-transform: uppercase;
@@ -101,7 +101,7 @@ body {
   /* 文字サイズの調整 */
 }
 .top__name {
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans";
   font-weight: 600;
   font-size: 4rem;
   color: white;
@@ -116,7 +116,7 @@ body {
   justify-content: space-between;
   align-items: stretch;
   position: relative;
-  max-width: 1500px;
+  max-width: 1400px;
   width: 100%;
   height: 800px;
 }
@@ -145,14 +145,15 @@ body {
   transform: translateY(-50%);
 }
 .top__vertical-left {
-  font-family: "Noto Sans";
+  font-family: "Zen Kaku Gothic New";
   font-weight: 700;
-  font-size: 4rem; /* 基本フォントサイズ */
+  font-size: 3rem; /* 基本フォントサイズ */
   line-height: 1.2;
-  letter-spacing: 0.23em;
+  letter-spacing: 0.6em;
   color: black;
-  left: -35px; /* 画像の外に半分出るように調整 */
+  left: -28px; /* 画像の外に半分出るように調整 */
   writing-mode: vertical-rl;
+  height: 100%;
 }
 .top__vertical-right {
   font-family: Roboto;
@@ -198,7 +199,7 @@ body {
 }
 
 .introduce {
-  padding: 50px 0;
+  padding: 50px 0 100px 0;
 }
 .introduce__inner {
   display: flex;
@@ -207,15 +208,17 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
+  position: relative;
 }
 .introduce__image {
   flex: 1;
-  max-width: 80%;
+  max-width: 100%;
   padding-right: 20px;
+  padding-left: 50px;
 }
 .introduce__image img {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 800px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -225,26 +228,92 @@ body {
   padding-left: 20px;
   color: #333;
   text-align: left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 60%;
+  white-space: nowrap;
 }
 .introduce__sentence .title {
-  font-family: "Hina Mincho", serif;
+  font-family: "Noto Sans";
   font-weight: bold;
   font-size: 2.5rem;
   line-height: 1.5;
   margin-bottom: 20px;
   color: #111;
+  letter-spacing: 0.11em;
 }
 .introduce__sentence .introduce__jpn {
-  font-family: "Noto Serif JP", serif;
-  font-size: 1.2rem;
+  font-family: "Noto Sans";
+  font-weight: 500;
+  font-size: 1.5rem;
   line-height: 1.8;
   margin-bottom: 20px;
 }
 .introduce__sentence .introduce__eng {
   font-family: "Noto Serif", serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   margin-top: 20px;
+}
+
+.plan {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.plan__inner {
+  position: relative;
+}
+.plan__sentence {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  z-index: 2;
+}
+.plan__image img {
+  width: auto; /* 画像の幅を自動で調整 */
+  max-width: 100%; /* コンテナの幅を超えないようにする */
+  height: 800px; /* 高さを指定 */
+  display: block;
+  margin: 0 auto; /* 画像を中央寄せに */
+}
+.plan__content {
+  display: flex; /* 子要素を横並びにするためにフレックスボックスを使用 */
+  justify-content: space-between; /* 子要素間のスペースを調整 */
+  align-items: flex-end; /* 垂直方向に中央揃え */
+  margin-top: 20px;
+}
+.plan__message {
+  flex: 2; /* メッセージ部分に2倍の幅を割り当て */
+  padding: 20px;
+  background-color: #f0f0f0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+.plan__btn {
+  flex: 1; /* ボタン部分に1倍の幅を割り当て */
+  margin-left: 10px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.plan__btn:hover {
+  background-color: #555;
 }
 
 .mobile-menu {
@@ -353,4 +422,27 @@ body {
 .menu-open .mobile-menu__btn > span:nth-child(3) {
   transition-delay: 140ms;
   transform: translateY(-11px) rotate(-135deg);
+}
+
+.hero__swiper {
+  width: min(100%, 500px);
+  margin-left: 100px; /* 左側に空白を作る */
+  margin-right: 0; /* 右側は画面の端とくっつける */
+}
+.hero__wrapper {
+  display: flex;
+  transition-timing-function: linear;
+}
+.hero__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px; /* 画像間に空白を作る */
+  width: auto;
+}
+.hero__slide img {
+  max-height: 300px; /* 画像の最大高さを設定 */
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover; /* 画像の高さを揃える */
 }/*# sourceMappingURL=style.css.map */

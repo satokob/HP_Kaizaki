@@ -1,0 +1,26 @@
+.hero {
+  &__swiper {
+    width: min(100%, 500px);
+    margin-left: 100px; /* 左側に空白を作る */
+    margin-right: 0; /* 右側は画面の端とくっつける */
+  }
+
+  &__wrapper {
+    display: flex;
+    transition-timing-function: linear;
+  }
+
+  &__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px; /* 画像間に空白を作る */
+    width: auto;
+  }
+
+  &__slide img {
+    max-height: 300px; /* 画像の最大高さを設定 */
+    width: auto;
+    object-fit: cover; /* 画像の高さを揃える */
+  }
+}

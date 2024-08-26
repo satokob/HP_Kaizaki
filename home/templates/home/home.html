@@ -7,9 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    {% comment %} スタイル開始 {% endcomment %}
+    <link rel="stylesheet" href="{% static 'home/css/css-reset.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/swiper-bundle.min.css' %}">
+
+    {% comment %} スタイル終了 {% endcomment %}
 
     {% comment %} フォント開始 {% endcomment %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
@@ -19,10 +29,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400..700&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
     {% comment %} フォント終了 {% endcomment %}
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
 
   </head>
 
@@ -81,8 +105,8 @@
                 <img src="{% static 'home/images/03.jpg' %}" alt="">
               </div>
               <div class="introduce__sentence">
-                <h1 class="title">"撮る"ものではなく<br>
-                  "与える"ものでありたい<br><br></h1>
+                <h1 class="title">と る も の で は な く<br>
+                  与 え る も の で あ り た い<br><br></h1>
                 <span class="introduce__jpn">
                   無限の刻を閉じ込めた一枚<br>
                   未来の君にその瞬間の魂を捧げる<br>
@@ -99,12 +123,52 @@
             </div>
           </section>
           {% comment %} 紹介終了 {% endcomment %}
+
+          {% comment %} ヒーロースライダー開始 {% endcomment %}
+          <section class="hero">
+            <div class="hero__swiper">
+              <!-- スライドのラッパー -->
+              <div class="hero__wrapper">
+                <!-- スライド -->
+                <div class="hero__slide">
+                  <img src="{% static 'home/images/03.jpg' %}" alt="">
+                </div>
+                <div class="hero__slide">
+                  <img src="{% static 'home/images/14.jpg' %}" alt="">
+                </div>
+                <div class="hero__slide">
+                  <img src="{% static 'home/images/14.jpg' %}" alt="">
+                </div>
+                <div class="hero__slide">
+                  <img src="{% static 'home/images/07-2.jpg' %}" alt="">
+                </div>
+                <div class="hero__slide">
+                  <img src="{% static 'home/images/3.jpg' %}" alt="">
+                </div>
+                <div class="hero__slide">
+                  <img src="{% static 'home/images/14.jpg' %}" alt="">
+                </div>
+                <div class="hero__slide">
+                  <img src="{% static 'home/images/07-2.jpg' %}" alt="">
+                </div>
+                <div class="hero__slide">
+                  <img src="{% static 'home/images/14.jpg' %}" alt="">
+                </div>
+              </div>
+            </div>
+          </section>
+          {% comment %} ヒーロースライダー終了 {% endcomment %}
         </main>
         
 
       </div>
     </div>
     
+    {% comment %} js適用開始 {% endcomment %}
+    <script src="{% static 'home/js/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'home/js/home.js' %}"></script>
+    <script src="{% static 'home/js/swiper.js' %}"></script>
+
+    {% comment %} js適用終了 {% endcomment %}
   </body>
 </html>
