@@ -106,9 +106,8 @@ body {
   font-size: 4rem;
   color: white;
   position: absolute;
-  top: 0;
-  left: 35%;
-  transform: translate(-50%, -20%);
+  left: 40%;
+  transform: translate(-50%, -50%);
   z-index: 2;
 }
 .top__inner {
@@ -424,25 +423,30 @@ body {
   transform: translateY(-11px) rotate(-135deg);
 }
 
-.hero__swiper {
-  width: min(100%, 500px);
-  margin-left: 100px; /* 左側に空白を作る */
-  margin-right: 0; /* 右側は画面の端とくっつける */
+.hero {
+  padding-left: 120px;
 }
-.hero__wrapper {
+.hero .swiper {
+  width: 100%;
+  height: 80vh; /* スライドショーの高さを設定 */
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero .swiper-wrapper {
   display: flex;
-  transition-timing-function: linear;
+  transition-timing-function: ease-in-out; /* 滑らかなスライド移動 */
 }
-.hero__slide {
+.hero .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 10px; /* 画像間に空白を作る */
-  width: auto;
+  background-color: #f0f0f0;
+  border-radius: 5px; /* 画像周りに丸みを加える */
+  overflow: hidden; /* 画像がスライド枠をはみ出さないようにする */
 }
-.hero__slide img {
-  max-height: 300px; /* 画像の最大高さを設定 */
-  width: auto;
+.hero .swiper-slide img {
+  width: 100%; /* 画像をスライドの幅いっぱいに表示 */
+  height: 100%; /* 画像をスライドの高さいっぱいに表示 */
   -o-object-fit: cover;
-     object-fit: cover; /* 画像の高さを揃える */
+     object-fit: cover; /* トリミングしてフィットさせる */
 }/*# sourceMappingURL=style.css.map */

@@ -1,26 +1,29 @@
 .hero {
-  &__swiper {
-    width: min(100%, 500px);
-    margin-left: 100px; /* 左側に空白を作る */
-    margin-right: 0; /* 右側は画面の端とくっつける */
+  padding-left: 120px;
+  .swiper {
+    width: 100%;
+    height: 80vh; /* スライドショーの高さを設定 */
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  &__wrapper {
+  .swiper-wrapper {
     display: flex;
-    transition-timing-function: linear;
+    transition-timing-function: ease-in-out; /* 滑らかなスライド移動 */
   }
 
-  &__slide {
+  .swiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right: 10px; /* 画像間に空白を作る */
-    width: auto;
+    background-color: #f0f0f0;
+    border-radius: 5px; /* 画像周りに丸みを加える */
+    overflow: hidden; /* 画像がスライド枠をはみ出さないようにする */
   }
 
-  &__slide img {
-    max-height: 300px; /* 画像の最大高さを設定 */
-    width: auto;
-    object-fit: cover; /* 画像の高さを揃える */
+  .swiper-slide img {
+    width: 100%; /* 画像をスライドの幅いっぱいに表示 */
+    height: 100%; /* 画像をスライドの高さいっぱいに表示 */
+    object-fit: cover; /* トリミングしてフィットさせる */
   }
 }

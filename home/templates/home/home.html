@@ -126,38 +126,50 @@
 
           {% comment %} ヒーロースライダー開始 {% endcomment %}
           <section class="hero">
-            <div class="hero__swiper">
+            <div class="swiper">
               <!-- スライドのラッパー -->
-              <div class="hero__wrapper">
+              <div class="swiper-wrapper">
                 <!-- スライド -->
-                <div class="hero__slide">
+                <div class="swiper-slide">
                   <img src="{% static 'home/images/03.jpg' %}" alt="">
                 </div>
-                <div class="hero__slide">
+                <div class="swiper-slide">
                   <img src="{% static 'home/images/14.jpg' %}" alt="">
                 </div>
-                <div class="hero__slide">
+                <div class="swiper-slide">
                   <img src="{% static 'home/images/14.jpg' %}" alt="">
                 </div>
-                <div class="hero__slide">
+                <div class="swiper-slide">
                   <img src="{% static 'home/images/07-2.jpg' %}" alt="">
                 </div>
-                <div class="hero__slide">
-                  <img src="{% static 'home/images/3.jpg' %}" alt="">
+                <div class="swiper-slide">
+                  <img src="{% static 'home/images/03.jpg' %}" alt="">
                 </div>
-                <div class="hero__slide">
+                <div class="swiper-slide">
                   <img src="{% static 'home/images/14.jpg' %}" alt="">
                 </div>
-                <div class="hero__slide">
+                <div class="swiper-slide">
                   <img src="{% static 'home/images/07-2.jpg' %}" alt="">
                 </div>
-                <div class="hero__slide">
+                <div class="swiper-slide">
                   <img src="{% static 'home/images/14.jpg' %}" alt="">
                 </div>
               </div>
             </div>
           </section>
           {% comment %} ヒーロースライダー終了 {% endcomment %}
+
+          {% comment %} ギャラリー開始 {% endcomment %}
+          <section class="gallery">
+
+          </section>
+          {% comment %} ギャラリー終了 {% endcomment %}
+
+          {% comment %} ニュース開始 {% endcomment %}
+          <section class="news">
+
+          </section>
+          {% comment %} ニュース終了 {% endcomment %}
         </main>
         
 
@@ -166,8 +178,9 @@
     
     {% comment %} js適用開始 {% endcomment %}
     <script src="{% static 'home/js/swiper-bundle.min.js' %}"></script>
-    <script src="{% static 'home/js/home.js' %}"></script>
     <script src="{% static 'home/js/swiper.js' %}"></script>
+    <script src="{% static 'home/js/home.js' %}"></script>
+    
 
     {% comment %} js適用終了 {% endcomment %}
   </body>
