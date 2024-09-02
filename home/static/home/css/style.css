@@ -186,7 +186,7 @@ body {
 }
 
 .introduce {
-  padding: 50px 0 100px 0;
+  padding: 80px 0 100px 0;
 }
 .introduce__inner {
   display: flex;
@@ -250,63 +250,36 @@ body {
   margin-top: 20px;
 }
 
-.plan {
-  position: relative;
-  width: 100%;
+.gallery {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+.gallery__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
-.plan__inner {
-  position: relative;
+.gallery__item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
-.plan__sentence {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 2rem;
-  font-family: "Noto Sans", sans-serif;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px 10px;
-  z-index: 2;
+.gallery__item:hover {
+  transform: translateY(-10px);
 }
-.plan__image img {
-  width: auto; /* 画像の幅を自動で調整 */
-  max-width: 100%; /* コンテナの幅を超えないようにする */
-  height: 800px; /* 高さを指定 */
+.gallery__item a {
   display: block;
-  margin: 0 auto; /* 画像を中央寄せに */
-}
-.plan__content {
-  display: flex; /* 子要素を横並びにするためにフレックスボックスを使用 */
-  justify-content: space-between; /* 子要素間のスペースを調整 */
-  align-items: flex-end; /* 垂直方向に中央揃え */
-  margin-top: 20px;
-}
-.plan__message {
-  flex: 2; /* メッセージ部分に2倍の幅を割り当て */
-  padding: 20px;
-  background-color: #f0f0f0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
-}
-.plan__btn {
-  flex: 1; /* ボタン部分に1倍の幅を割り当て */
-  margin-left: 10px;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  font-size: 1rem;
+  color: inherit;
   text-decoration: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
-.plan__btn:hover {
-  background-color: #555;
+.gallery__item img, .gallery__item video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .mobile-menu {
