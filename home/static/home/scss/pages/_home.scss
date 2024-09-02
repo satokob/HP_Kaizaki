@@ -36,18 +36,6 @@ body {
   }
 }
 
-.logo {
-  width: 200px;
-  font-size: 25px;
-  color: #8f8f8f;
-  text-transform: uppercase;
-  float: left;
-  display: block;
-  margin-top: 0;
-  line-height: 1;
-  margin-bottom: 10px;
-
-}
 
 .header__nav {
   float: right;
@@ -217,7 +205,7 @@ body {
 
   &__inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* 全体を中央揃え */
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -229,18 +217,24 @@ body {
     flex: 1;
     max-width: 100%;
     padding-right: 20px;
-    padding-left: 50px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     img {
-      width: 80%;
-      height: 800px;
-      object-fit: cover;
+      width: auto;
+      height: auto;
+      max-width: 70%; /* 画像がコンテナの幅を超えないように */
+      max-height: 70%; /* 画像がコンテナの高さを超えないように */
+      object-fit: contain; /* アスペクト比を保ちながら画像を表示 */
+      margin: 0 auto; /* 画像を中央に配置 */
     }
   }
 
   &__sentence {
     flex: 1;
-    max-width: 50%;
+    max-width: 50%; /* テキスト部分は最大幅50%に */
     padding-left: 20px;
     color: #333;
     text-align: left;
@@ -276,6 +270,7 @@ body {
     }
   }
 }
+
 
 .plan {
   position: relative;

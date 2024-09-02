@@ -2,14 +2,15 @@
   padding-left: 120px;
   .swiper {
     width: 100%;
-    height: 80vh; /* スライドショーの高さを設定 */
+    height: 500px; /* スライドショーの高さを設定 */
     margin-left: auto;
     margin-right: auto;
   }
 
-  .swiper-wrapper {
-    display: flex;
-    transition-timing-function: ease-in-out; /* 滑らかなスライド移動 */
+  .swiper-wrapper{
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
   }
 
   .swiper-slide {
