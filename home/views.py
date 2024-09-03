@@ -7,10 +7,11 @@ def get_instagram_posts():
     url = f'https://graph.instagram.com/{user_id}/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token={access_token}'
     
     response = requests.get(url)
+    print(response.text)
     
-    if response.status_code == 200:
-        return response.json().get('data', [])
-    return []
+    # if response.status_code == 200:
+    #     return response.json().get('data', [])
+    # return []
 
 def home(request):
     instagram_posts = get_instagram_posts()
