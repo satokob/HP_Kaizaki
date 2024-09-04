@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'news',
     'contact',
     'sass_processor',
+    'ckeditor',
 
 ]
 

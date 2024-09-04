@@ -282,6 +282,66 @@ body {
   display: block;
 }
 
+.news {
+  padding: 20px;
+}
+.news h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+.news p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 20px;
+}
+.news ul {
+  list-style: none;
+  padding: 0;
+}
+.news ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.news ul li .news-date {
+  font-size: 1em;
+  color: #888;
+}
+.news ul li .news-content {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+}
+.news .all-view {
+  text-align: right;
+  margin-top: 20px;
+}
+.news .all-view a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+.news .all-view a:hover {
+  color: #555;
+}
+.news .all-view a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: background-color 0.3s;
+}
+.news .all-view a:hover::after {
+  background-color: #555;
+}
+
 .mobile-menu {
   position: fixed;
   right: 0;
