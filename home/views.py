@@ -3,8 +3,8 @@ from django.shortcuts import render
 from news.models import News  
 
 def get_instagram_posts():
-    access_token = 'IGQWRONjNkTHhMRWVFeTZAONm8ySjVDeVphVmJwMDM4QUxMYnFlZAWVXLXRqUG9GWUdNaERtcF9vWUsxemtuUWVpU3k0S2J4YWxOVWN2UmQxRjIzRE9FMjdRZAkIyaTRBRmNjZA1FnOW9JUVdLdU9xYXNpeDFWUmowNFkZD'
-    user_id = '17841407386127966'
+    access_token = 'EAAWP0w6t9cMBOZCUCC4CzZAJ8Al2l5rh8md5O23ccrNYw9H9XeiDPwRCHQ3ZAFUBxZAVUvHZBGJOq1RQt6ZCb9FgVAkKZBhlT6yGDVZBlKpcxxMZBbgUYZABVShteTASGFVS7lBfeeCshCYF9TknstsfG01JxZATb3uKHIQUQNj0w41gGOnWyhYnZCuufydbv5sdKQZDZD'
+    user_id = '181475575221097'
     url = f'https://graph.instagram.com/{user_id}/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token={access_token}'
     
     response = requests.get(url)
