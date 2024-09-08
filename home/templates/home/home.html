@@ -56,25 +56,8 @@
         <div class="mobile-menu__cover"></div>
 
         {% comment %} ヘッダー開始 {% endcomment %}
-        <header class="main_h">
-          <div class="row">
-              <div class="mobile-toggle">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-              </div>
-              <nav class="header__nav">
-                  <ul class="header__ul">
-                      <li class="header__li"><a href="#about">About</a></li>
-                      <li class="header__li"><a href="#gallery">Gallery</a></li>
-                      <li class="header__li"><a href="#plan">Plan</a></li>
-                      <li class="header__li"><a href="https://kobayanskilab.stores.jp/">Preset</a></li>
-                      <li class="header__li"><a href="{% url 'news'%}">News</a></li>
-                      <li class="header__li"><a href="#contact">Contact</a></li>
-                  </ul>
-              </nav>
-          </div> 
-        </header>
+        {% include 'header.html' %}
+
         {% comment %} ヘッダー終了 {% endcomment %}
 
         
@@ -178,18 +161,18 @@
 
           {% comment %} ニュース開始 {% endcomment %}
           <section class="news">
-            <h2>NEWS</h2>
-            <p>お知らせ・ブログ</p>
+            <h2>
+            </h2>
             <ul>
-                {% for news in latest_news %}
-                <li>
-                    <span class="news-date">{{ news.published_date|date:"Y.m.d" }}</span>
-                    <span class="news-content">{{ news.title }}</span>
-                </li>
-                {% endfor %}
+              {% for news in latest_news %}
+              <li class="news-row">
+                <div class="news-date">{{ news.published_date|date:'Y.m.d' }}</div>
+                <div class="news-content">{{ news.title }}</div>
+              </li>
+            {% endfor %}
             </ul>
             <div class="all-view">
-                <a href="{% url 'news' %}">ALL VIEW</a>
+              <a href="{% url 'news' %}">ALL VIEW</a>            
             </div>
           </section>
         

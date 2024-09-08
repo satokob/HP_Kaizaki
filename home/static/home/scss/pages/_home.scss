@@ -312,11 +312,6 @@ body {
 .news {
   padding: 20px;
   
-  h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #333;
-  }
   
   p {
     font-size: 1.2em;
@@ -335,15 +330,15 @@ body {
       padding-bottom: 10px;
       border-bottom: 1px solid #ddd;
       
-      .news-date {
-        font-size: 1em;
-        color: #888;
+      .news-row {
+        display: flex;
       }
-      
+      .news-date {
+        flex: 0 0 40%;
+        text-align: center;
+      }
       .news-content {
-        font-size: 1.1em;
-        font-weight: bold;
-        color: #333;
+        flex: 0 0 60%;
       }
     }
   }
