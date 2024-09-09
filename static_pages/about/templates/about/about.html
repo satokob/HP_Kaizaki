@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Kaizaki Maria</title>
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
 </head>
 <body>
-  {% include 'header.html' %}
+    {% include 'header.html' %}
 
+    <div class="about">
+        <div class="about__container">
+            <div class="about__title">
+                <h2>ABOUT</h2>
+            </div>
+            <div class="about__content">
+                <div class="about__image">
+                    <img src="kaizaki-maria.jpg" alt="Kaizaki Maria">
+                </div>
+                <div class="about__text">
+                    <h1>かいざきまりあ</h1>
+                    <h2>写真家</h2>
+                    <p>1989年長野県生まれ、大阪府在住<br>
+                        芸術大学写真学科卒業後、アシスタントを経てフリーランスの写真家に。<br>
+                        雑誌、企業サイト、広告などで活動中</p>
+                    <h2>Kaizaki Maria</h2>
+                    <p>Photographer</p>
+                    <p>Born in Hokkaido, Japan, in 1981. Currently resides in New York.<br>
+                        Graduated from the University of Arts, Department of Photography in 2003.<br>
+                        Working for various magazines, advertisement, etc.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
