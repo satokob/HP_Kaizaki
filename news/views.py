@@ -1,13 +1,12 @@
-from django.urls import path
 from django.shortcuts import render
-from .models import News  
+from django.core.paginator import Paginator
+from .models import News
 
-# news関数を定義
-def news(request):
-    latest_news = News.objects.all().order_by('-published_date')[:5]  # 最新5件を取得
-    return render(request, 'news/news.html', {'latest_news': latest_news})  
+def news_view(request):
+    news_list = News.objects.all().order_by('-date')
+    paginator = Paginator(news_list, 5)  # 1ページに5件表示
 
-# URLパターンを定義
-urlpatterns = [
-    path('', news, name='news'),  
-]
+    page_number = request.GET.get('page')
+    news_list = paginator.get_page(page_number)
+
+    return render(request, 'news.html', {'news_list': news_list})

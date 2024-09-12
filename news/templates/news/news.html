@@ -1,17 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-  {% for news in latest_news %}
-  <li class="news-row">
-    <div class="news-date">{{ news.published_date|date:'Y.m.d' }}</div>
-    <div class="news-content">{{ news.title }}</div>
-  </li>
-{% endfor %}
-  
+    <header class="main_h">
+        <!-- ヘッダーコンテンツ -->
+    </header>
+
+    <section class="hero">
+        <div class="hero__image">
+            <img src="{% static 'images/hero-image.jpg' %}" alt="Hero Image">
+            <div class="hero__overlay">
+                <h1>News</h1>
+                <p>お知らせ</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-list">
+        <div class="container">
+            {% for news_item in news_list %}
+                <div class="news-item">
+                    <p>{{ news_item.date }}</p>
+                    <p>{{ news_item.title }}</p>
+                </div>
+            {% empty %}
+                <p>現在お知らせはありません。</p>
+            {% endfor %}
+        </div>
+
+        <div class="pagination">
+            <span class="prev">{% if news_list.has_previous %}<a href="?page={{ news_list.previous_page_number }}">前のページ</a>{% endif %}</span>
+            <span class="next">{% if news_list.has_next %}<a href="?page={{ news_list.next_page_number }}">次のページ</a>{% endif %}</span>
+        </div>
+    </section>
 </body>
 </html>

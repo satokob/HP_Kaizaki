@@ -65,7 +65,10 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
                  os.path.join(BASE_DIR, 'HP_Kaizaki/templates'),
-                 os.path.join(BASE_DIR, 'static_pages/about/templates'),],
+                 os.path.join(BASE_DIR, 'static_pages/about/templates'),
+                 os.path.join(BASE_DIR, 'static_pages/plan/templates'),
+                 os.path.join(BASE_DIR, 'news/templates'),
+                 ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
