@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;  // ページ全体の文字をきれいに見せる
+  background-color: #f9f9f9;  // ページ全体の背景色を淡いグレーにする
+}
+
+form {
+  max-width: 600px;  // フォームの幅を600ピクセルにする
+  margin: 0 auto;  // ページの中央にフォームを置く
+  padding: 20px;  // フォームの中に少し余白を作る
+  background-color: #fff;  // フォームの背景色を白にする
+  border-radius: 10px;  // 角を丸くする
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  // フォームに影をつけて少し浮き上がって見えるようにする
+}
+
+.form-group {
+  margin-bottom: 15px;  // フォームの各項目の間に少し隙間を作る
+}
+
+label {
+  display: block;  // ラベルをブロック状にする（見やすくなる）
+  margin-bottom: 5px;  // ラベルと入力ボックスの間に少し隙間を作る
+  font-weight: bold;  // ラベルの文字を太字にする
+}
+
+input, textarea {
+  width: 100%;  // 入力ボックスをフォーム全体の幅に広げる
+  padding: 10px;  // ボックスの中に余白を作って入力しやすくする
+  border: 1px solid #ccc;  // 枠線を薄いグレーにする
+  border-radius: 5px;  // ボックスの角を少し丸くする
+}
+
+button {
+  background-color: #4CAF50;  // 送信ボタンの色を緑にする
+  color: white;  // ボタンの文字を白にする
+  padding: 10px 20px;  // ボタンに余白を作って押しやすくする
+  border: none;  // ボタンの枠線をなくす
+  border-radius: 5px;  // ボタンの角を少し丸くする
+  cursor: pointer;  // ボタンにカーソルを合わせると、手のアイコンに変わるようにする
+}
+
+button:hover {
+  background-color: #45a049;  // ボタンにマウスを乗せたときに少し濃い緑に変わる
+}

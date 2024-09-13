@@ -68,6 +68,7 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'static_pages/about/templates'),
                  os.path.join(BASE_DIR, 'static_pages/plan/templates'),
                  os.path.join(BASE_DIR, 'news/templates'),
+                 os.path.join(BASE_DIR, 'contact/templates'),
                  ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -137,8 +138,8 @@ STATICFILES_DIRS = [
     BASE_DIR / 'gallery/static/gallery',
     BASE_DIR / 'news/static/news',
     BASE_DIR / 'contact/static/contact',
-    BASE_DIR / 'static_pages/about/static/about',
-    BASE_DIR / 'static_pages/plan/static/plan',
+    BASE_DIR / 'static_pages/about/static',
+    BASE_DIR / 'static_pages/plan/static',
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'

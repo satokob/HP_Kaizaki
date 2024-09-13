@@ -4,4 +4,4 @@ def about(request):
   return render(request, 'about/about.html')
 
 def plan(request):
-  return render(request, 'static_pages/plan.html')
+  return render(request, 'plan/plan.html')
