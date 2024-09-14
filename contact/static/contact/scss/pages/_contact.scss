@@ -1,84 +1,55 @@
-/* Contact セクションのスタイリング */
-.contact-header {
-  position: relative;
-  height: 400px;
-  background: url('{% static "images/background.jpg" %}') no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.contact-header .header-content {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 20px 40px;
-  border-radius: 10px;
-}
-
-.contact-header h2 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #333;
-}
-
-.contact-header p {
-  font-size: 18px;
-  color: #555;
-}
-
-/* フォーム全体のスタイリング */
-.contact-form-container {
-  max-width: 800px;
+form {
+  width: 70%;
   margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-.contact-form-container form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-}
-
-.contact-form-container .form-group {
+.form-row {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #f2f4f5;
 }
-
-.contact-form-container .form-group label {
-  margin-bottom: 8px;
+.form-row:last-child {
+  border-bottom: none;
+}
+.form-label {
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+.form-label label {
   font-weight: bold;
-  color: #333;
 }
-
-.contact-form-container .form-group input,
-.contact-form-container .form-group textarea,
-.contact-form-container .form-group select {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  width: 100%;
-}
-
-.contact-form-container .form-group textarea {
-  height: 150px;
-}
-
-.contact-form-container button {
-  grid-column: span 2;
-  padding: 12px 20px;
-  background-color: #007BFF;
+.form-label span {
+  margin-left: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
   color: #fff;
-  font-size: 18px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: #166ab5;
 }
 
-.contact-form-container button:hover {
-  background-color: #0056b3;
+input, textarea, select {
+  background-color: #f2f4f5;
+  border: none;
+  border-radius: 3px;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #333;
+  flex-grow: 1;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+button {
+  cursor: pointer;
+  margin-top: 30px;
+  padding: 15px 45px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bold;
+  background-color: #166ab5;
 }
