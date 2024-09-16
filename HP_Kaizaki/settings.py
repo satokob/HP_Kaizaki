@@ -174,11 +174,11 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True,
         },
-        'home': {  # 特定のアプリだけに別の設定をする場合
-            'handlers': ['console'],
-            'level': 'INFO',  # 詳細なデバッグログは出さない
-            'propagate': False,  # 伝播しないように設定
-        },
+        # 'home': {  # 特定のアプリだけに別の設定をする場合
+        #     'handlers': ['console'],
+        #     'level': 'INFO',  # 詳細なデバッグログは出さない
+        #     'propagate': False,  # 伝播しないように設定
+        # },
     },
     
     'handlers': {

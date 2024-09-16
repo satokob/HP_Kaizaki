@@ -1,85 +1,106 @@
 @charset "UTF-8";
-/* Contact セクションのスタイリング */
-.contact-header {
-  position: relative;
-  height: 400px;
-  background: url('{% static "images/background.jpg" %}') no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* 基本のスタイル */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-size: 2.5rem;
   text-align: center;
-}
-
-.contact-header .header-content {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 20px 40px;
-  border-radius: 10px;
-}
-
-.contact-header h2 {
-  font-size: 36px;
-  font-weight: bold;
+  margin: 20px 0;
   color: #333;
 }
 
-.contact-header p {
-  font-size: 18px;
-  color: #555;
+p {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
 }
 
-/* フォーム全体のスタイリング */
-.contact-form-container {
-  max-width: 800px;
+/* コンテナ */
+.contact-container {
+  max-width: 600px;
   margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #f9f9f9;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form-container form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+/* フォームのラベルと入力欄 */
+.form-row {
+  margin-bottom: 20px;
 }
 
-.contact-form-container .form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form-container .form-group label {
+.form-row label {
+  display: block;
+  font-size: 1rem;
   margin-bottom: 8px;
-  font-weight: bold;
   color: #333;
 }
 
-.contact-form-container .form-group input,
-.contact-form-container .form-group textarea,
-.contact-form-container .form-group select {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+.form-row input,
+.form-row textarea,
+.form-row select {
   width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.contact-form-container .form-group textarea {
-  height: 150px;
+/* エラーメッセージ */
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
 }
 
-.contact-form-container button {
-  grid-column: span 2;
-  padding: 12px 20px;
-  background-color: #007BFF;
+/* 送信ボタン */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.2rem;
+  text-align: center;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.contact-form-container button:hover {
+.submit-btn:hover {
   background-color: #0056b3;
+}
+
+/* リンク */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .submit-btn {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=style.css.map */

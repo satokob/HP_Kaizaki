@@ -9,6 +9,7 @@ class ContactForm(forms.Form):
     })
     phone = forms.CharField(label='お電話番号', required=False)  # 任意項目
     TITLE_CHOICES = [
+        ('contact', 'ー お問い合わせ内容を選択してください ー'),
         ('wedding', 'ウェディング撮影のお見積もり依頼'),
         ('lesson', 'レッスンのご依頼'),
         ('other', 'その他のご質問'),

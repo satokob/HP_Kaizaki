@@ -6,63 +6,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせ</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'contact/css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+
 </head>
 <body>
+    {% include 'header.html' %}
 
-<section class="contact-header">
-    <img src="{% static 'images/background.jpg' %}" alt="背景画像">
-    <div class="header-content">
-        <h2>お問い合わせ</h2>
+    <div class="contact-container">
+        <h1>お問い合わせ</h1>
         <p>～コンタクト～</p>
-    </div>
-</section>
 
-<div class="contact-form-container">
-    <p>撮影のご予約は以下のGoogle フォームよりお問い合わせください。</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdPAWTGLGWkHL4QBdSx-3jM7ZyJOJsrYQnt2_Tx7EUeKv_EGQ/viewform" class="google-form-link">Googleフォームはこちら</a>
-    
-    <p>その他のお問い合わせについては、以下のフォームよりお気軽にご連絡ください。</p>
+        <div class="contact-form-wrapper">
+            <p>撮影のご予約は以下のGoogleフォームよりお問い合わせください。<br>
+            <a href="https://docs.google.com/forms">Googleフォームはこちら</a></p>
 
-    <form method="post" action="{% url 'contact' %}" class="contact-form">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="id_name">お名前</label>
-            <input type="text" id="id_name" name="name" value="{{ form.name.value }}" required>
-        </div>
+            <p>その他のお問い合わせについては、以下のフォームよりお気軽にご連絡ください。</p>
 
-        <div class="form-group">
-            <label for="id_kana">ふりがな</label>
-            <input type="text" id="id_kana" name="kana" value="{{ form.kana.value }}" required>
-        </div>
+            <form method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
 
-        <div class="form-group">
-            <label for="id_phone">お電話番号</label>
-            <input type="text" id="id_phone" name="phone" value="{{ form.phone.value }}">
-        </div>
-
-        <div class="form-group">
-            <label for="id_email">Email</label>
-            <input type="email" id="id_email" name="email" value="{{ form.email.value }}" required>
-        </div>
-
-        <div class="form-group">
-            <label for="id_title">お問い合わせ概要</label>
-            <select id="id_title" name="title" required>
-                {% for choice in form.title.field.choices %}
-                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                <!-- フォームフィールドをループで自動的に表示 -->
+                {% for field in form %}
+                <div class="form-row">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="error">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
                 {% endfor %}
-            </select>
+
+                <button type="submit" class="submit-btn">送信する</button>
+            </form>
         </div>
-
-        <div class="form-group">
-            <label for="id_message">お問い合わせ内容</label>
-            <textarea id="id_message" name="message" required>{{ form.message.value }}</textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">送信する</button>
-    </form>
-</div>
-
+    </div>
 </body>
 </html>
