@@ -204,7 +204,7 @@ LOGGING = {
 
 # Read settings.json
 try:
-    config_path = os.path.join(BASE_DIR, 'settings.json')
+    config_path = os.path.join(BASE_DIR, 'HP_Kaizaki/settings.json')
     config = json.load(open(config_path, "r", encoding="utf-8"))
 except FileNotFoundError as e:
     print("[ERROR] Config file is not found.")
@@ -220,8 +220,8 @@ email_host_pass = config['EMAIL_HOST_PASS']
 # ... 略 ...
 
 # メールの配信先の設定
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # [開発時用]コンソール上に内容を表示させる
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'       # [運用時用]
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # [開発時用]コンソール上に内容を表示させる
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'       # [運用時用]
 
 # メールサーバー設定
 EMAIL_HOST = 'smtp.gmail.com'

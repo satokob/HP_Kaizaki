@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,6 +9,8 @@
     <link rel="stylesheet" href="{% static 'contact/css/success.css' %}">
 </head>
 <body>
+  {% include 'header.html' %}
+
     <div class="success-container">
         <h1>お問い合わせありがとうございます！</h1>
         <p>ご入力いただいた内容を確認の上、後ほど担当者よりご連絡いたします。</p>

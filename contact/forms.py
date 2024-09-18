@@ -11,9 +11,10 @@ class ContactForm(forms.Form):
     phone = forms.CharField(label='お電話番号', required=False)  # 任意項目
     TITLE_CHOICES = [
         ('contact', 'ー お問い合わせ内容を選択してください ー'),
+        ('take_photo', '撮影に関するお問い合わせ'),
         ('wedding', 'ウェディング撮影のお見積もり依頼'),
         ('lesson', 'レッスンのご依頼'),
-        ('other', 'その他のご質問'),
+        ('other', 'その他のお問い合わせ'),
     ]
     title = forms.ChoiceField(label='タイトル', choices=TITLE_CHOICES, error_messages={'required': '必須項目です'})
     message = forms.CharField(label='お問い合わせ内容', widget=forms.Textarea, required=False)
