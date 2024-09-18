@@ -32,17 +32,18 @@
             {% for news_item in news_list %}
                 <div class="news-item">
                     <p>{{ news_item.date }}</p>
-                    <p>{{ news_item.title }}</p>
+                    <a href="{% url 'blog_detail' news_item.id %}">{{ news_item.title }}</a> <!-- タイトルにリンクを追加 -->
                 </div>
             {% empty %}
                 <p>現在お知らせはありません。</p>
             {% endfor %}
         </div>
-
+    
         <div class="pagination">
             <span class="prev">{% if news_list.has_previous %}<a href="?page={{ news_list.previous_page_number }}">前のページ</a>{% endif %}</span>
             <span class="next">{% if news_list.has_next %}<a href="?page={{ news_list.next_page_number }}">次のページ</a>{% endif %}</span>
         </div>
     </section>
+    
 </body>
 </html>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import News
 
@@ -10,3 +10,7 @@ def news_view(request):
     news_list = paginator.get_page(page_number)
 
     return render(request, 'news/news.html', {'news_list': news_list})
+
+def bolg_detail(request, id):
+    news_item = get_object_or_404(News, id=id)
+    return render(request, 'news/blog_detail.html', {'news_item': news_item})
