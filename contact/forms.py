@@ -1,4 +1,5 @@
 from django import forms
+from django.core.mail import EmailMessage
 
 class ContactForm(forms.Form):
     name = forms.CharField(label='お名前', max_length=50, error_messages={'required': '必須項目です'})
@@ -33,3 +34,31 @@ class ContactForm(forms.Form):
         # 電話番号とメールアドレスが両方空の場合にエラーメッセージを出す
         if not phone and not email:
             raise forms.ValidationError('電話番号またはメールアドレスのいずれかを入力してください。')
+    
+    #メール送信設定
+    def send_email(self):
+        name = self.cleaned_data['name']
+        kana = self.cleaned_data['kana']
+        email = self.cleaned_data['email']
+        phone = self.cleaned_data['phone']
+        title = self.cleaned_data['title']
+        message = self.cleaned_data['message']
+
+        # メール内容の設定
+        subject = f'[お問い合わせ] {title}'
+        body = (
+            f'webサイト経由でお問合せがありました。\n\n'
+            f'送信者 : {name}\n'
+            f'ふりがな : {kana}\n'
+            f'メールアドレス : {email}\n'
+            f'電話番号 : {phone}\n'
+            f'メッセージ : {message}\n'
+        )
+
+        from_email = 'satoki.kob@gmail.com'
+        to_list =['kaizakimaria@gmail.com']
+        bcc_list = ['adao1994saru@yahoo.co.jp']
+
+         # メール送信処理
+        msg = EmailMessage(subject=subject, body=body, from_email=from_email, to=to_list, bcc=bcc_list)
+        msg.send()

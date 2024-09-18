@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import json
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -200,3 +201,31 @@ LOGGING = {
         },
     }
 }
+
+# Read settings.json
+try:
+    config_path = os.path.join(BASE_DIR, 'settings.json')
+    config = json.load(open(config_path, "r", encoding="utf-8"))
+except FileNotFoundError as e:
+    print("[ERROR] Config file is not found.")
+    raise e
+except ValueError as e:
+    print("[ERROR] Json file is invalid.")
+    raise e
+
+secret_key = config['SECRET_KEY']
+email_host = config['EMAIL_HOST']
+email_host_pass = config['EMAIL_HOST_PASS']
+
+# ... 略 ...
+
+# メールの配信先の設定
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'    # [開発時用]コンソール上に内容を表示させる
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'       # [運用時用]
+
+# メールサーバー設定
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = email_host
+EMAIL_HOST_PASSWORD = email_host_pass
+EMAIL_USE_TLS = True
