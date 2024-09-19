@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section class="gallery">
+    <h1>Instagram Gallery</h1>
+    <div class="gallery-grid">
+        {% for post in instagram_posts %}
+            <div class="gallery-item">
+                {% if post.media_type == 'IMAGE' %}
+                    <a href="{{ post.permalink }}" target="_blank">
+                        <img src="{{ post.media_url }}" alt="{{ post.caption }}">
+                    </a>
+                {% elif post.media_type == 'VIDEO' %}
+                    <a href="{{ post.permalink }}" target="_blank">
+                        <video controls>
+                            <source src="{{ post.media_url }}" type="video/mp4">
+                        </video>
+                    </a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+</body>
+</html>
