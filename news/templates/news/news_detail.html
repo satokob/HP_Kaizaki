@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'news/css/detail.css' %}">
+  <title>Document</title>
+</head>
+<body>
+
+  {% include 'header.html' %}
+
+  <section class="hero">
+    <div class="hero__image">
+        {% comment %} <img src="{% static 'images/hero-image.jpg' %}" alt="Hero Image"> {% endcomment %}
+        <div class="hero__overlay">
+            <h1>{{ news_item.title }}</h1>
+            <p>{{ news_item.content }}</p>
+            <p>{{ news_item.published_date }}</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
