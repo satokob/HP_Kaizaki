@@ -11,6 +11,6 @@ def news_view(request):
 
     return render(request, 'news/news.html', {'news_list': news_list})
 
-def bolg_detail(request, id):
+def blog_detail(request, id):
     news_item = get_object_or_404(News, id=id)
     return render(request, 'news/blog_detail.html', {'news_item': news_item})
