@@ -11,7 +11,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  max-width: 800px;
+  max-width: 960px;
 }
 .about__title {
   writing-mode: vertical-rl;
@@ -30,7 +30,7 @@
 }
 .about__image img {
   border-radius: 5px;
-  max-width: 200px;
+  max-width: 500px;
   height: auto;
 }
 .about__text h1 {

@@ -40,6 +40,7 @@ body {
   float: right;
   width: 60%;
   ul {
+    padding-right: 50px;
     list-style: none;
     overflow: hidden;
     text-align: right;
@@ -51,7 +52,7 @@ body {
       a {
         color: #888888;
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 16px;
       }
     }
   }
