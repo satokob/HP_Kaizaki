@@ -67,11 +67,11 @@
             <h1 class="top__name">Kaizaki Maria</h1>
             <div class="top__inner">
               <div class="top__left">
-                <img src="{% static 'home/images/14.jpg' %}" class="top__image-left">
+                <img src="{% static 'home/images/top-left.jpg' %}" class="top__image-left">
                 <span class="top__vertical-left">与える写真 </span>
               </div>
               <div class="top__right">
-                <img src="{% static 'home/images/07-2.jpg' %}" class="top__image-right">
+                <img src="{% static 'home/images/top-right.jpg' %}" class="top__image-right">
                 <span class="top__vertical-right">PHOTOGRAPHER</span>
               </div>
             </div>
@@ -79,7 +79,7 @@
           {% comment %} トップ画像終了 {% endcomment %}
 
           {% comment %} 紹介開始 {% endcomment %}
-          <section class="introduce">
+          <section class="intsliroduce">
             <div class="introduce__inner">
               <div class="introduce__image">
                 <img src="{% static 'home/images/03.jpg' %}" alt="">
@@ -111,28 +111,34 @@
               <div class="swiper-wrapper">
                 <!-- スライド -->
                 <div class="swiper-slide">
-                  <img src="{% static 'home/images/03.jpg' %}" alt="">
+                  <img src="{% static 'home/images/slide-01.jpg' %}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="{% static 'home/images/14.jpg' %}" alt="">
+                  <img src="{% static 'home/images/slide-03.jpg' %}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="{% static 'home/images/14.jpg' %}" alt="">
+                  <img src="{% static 'home/images/slide-05.jpg' %}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="{% static 'home/images/07-2.jpg' %}" alt="">
+                  <img src="{% static 'home/images/slide-07.jpg' %}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="{% static 'home/images/03.jpg' %}" alt="">
+                  <img src="{% static 'home/images/slide-09.jpg' %}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="{% static 'home/images/14.jpg' %}" alt="">
+                  <img src="{% static 'home/images/slide-02.jpg' %}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="{% static 'home/images/07-2.jpg' %}" alt="">
+                  <img src="{% static 'home/images/slide-04.jpg' %}" alt="">
                 </div>
                 <div class="swiper-slide">
-                  <img src="{% static 'home/images/14.jpg' %}" alt="">
+                  <img src="{% static 'home/images/slide-06.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'home/images/slide-08.jpg' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'home/images/slide-10.jpg' %}" alt="">
                 </div>
               </div>
             </div>
@@ -166,7 +172,7 @@
             <ul>
               {% for news in latest_news %}
               <li class="news-row">
-                <div class="news-date">{{ news.published_date|date:'Y.m.d' }}</div>
+                <div class="news-date">{{ news_item.published_date|date:"Y-m-d" }}</div>
                 <div class="news-content">{{ news.title }}</div>
               </li>
             {% endfor %}

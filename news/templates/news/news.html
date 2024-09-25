@@ -31,7 +31,7 @@
         <div class="container">
             {% for news_item in news_list %}
                 <div class="news-item">
-                    <p>{{ news_item.published_date }}</p>
+                    <p>{{ news_item.published_date|date:"Y-m-d" }}</p>
                     <a href="{% url 'news_detail' news_item.id %}">{{ news_item.title }}</a> <!-- タイトルにリンクを追加 -->
                 </div>
             {% empty %}

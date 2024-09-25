@@ -6,7 +6,7 @@ from django.utils import timezone
 class News(models.Model):
   title = models.CharField(max_length=200)
   content = RichTextField()
-  published_date = models.DateField(null=True, blank=True, default=timezone.now)
+  published_date = models.DateTimeField(null=True, blank=True, default=timezone.now)
 
   def __str__(self):
     snippet = self.content[:50]  
