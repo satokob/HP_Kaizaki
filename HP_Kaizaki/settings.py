@@ -141,6 +141,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'contact/static/contact',
     BASE_DIR / 'static_pages/about/static',
     BASE_DIR / 'static_pages/plan/static',
+    BASE_DIR / 'static_pages',
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
