@@ -266,8 +266,8 @@ body {
   justify-items: center;
 }
 .gallery .gallery-item {
-  width: 100%;
-  padding-bottom: 100%;
+  width: 80%;
+  padding-bottom: 80%;
   position: relative;
 }
 .gallery .gallery-item a, .gallery .gallery-item video, .gallery .gallery-item img {

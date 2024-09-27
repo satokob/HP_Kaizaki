@@ -289,8 +289,8 @@ body {
   }
 
   .gallery-item {
-    width: 100%; // グリッドセル全体を使う
-    padding-bottom: 100%; // 正方形にするための設定
+    width: 80%; // グリッドセル全体を使う
+    padding-bottom: 80%; // 正方形にするための設定
     position: relative; // 要素を絶対配置するために必要
 
     a, video, img {
