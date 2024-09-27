@@ -7,6 +7,6 @@ def get_instagram_posts():
 
     response = requests.get(url)
     if response.status_code == 200:
-        return response.json()['data']
+        return [data for data in response.json()['data'] if data['media_type'] in ['IMAGE', 'VIDEO']][:9]
     else:
         return None

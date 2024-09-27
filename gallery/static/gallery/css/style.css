@@ -1,0 +1,15 @@
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery-grid .gallery-item {
+  display: block;
+  max-width: 33.3333333333%;
+  flex: 0 0 33.3333333333%;
+}
+.gallery-grid .gallery-item img {
+  width: 100%;
+}
+.gallery-grid .gallery-item video {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
