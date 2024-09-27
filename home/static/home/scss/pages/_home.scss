@@ -274,28 +274,52 @@ body {
 
 
 .gallery {
-  .gallery-galery { 
-    .gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
+  padding: 100px 0;
+
+  &__title {
+    padding-left: 10%;
+    font-size: 2.5rem;
+  }
   
-    .gallery-item {
-      display: block;
-      max-width: 50%;
-      flex: 0 0 50%;
-  
-      img, video {
-        width: 200px;
-        height: 200px;
-      }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3列表示
+    grid-gap: 10px; // 各投稿の間のスペースを調整
+    justify-items: center;
+  }
+
+  .gallery-item {
+    width: 100%; // グリッドセル全体を使う
+    padding-bottom: 100%; // 正方形にするための設定
+    position: relative; // 要素を絶対配置するために必要
+
+    a, video, img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // 正方形に収まるようにトリミング
     }
-  }}
- 
+
+    img {
+      border-radius: 5px; // 角を少し丸める
+    }
+
+    video {
+      border-radius: 5px;
+    }
+  }
 }
+
 
 .news {
   padding: 20px;
   
+  &__title {
+    padding-left: 10%;
+    font-size: 2.5rem;
+  }
   
   p {
     font-size: 1.2em;

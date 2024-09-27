@@ -98,28 +98,16 @@
 
 {% comment %} ギャラリー開始 {% endcomment %}
 <section class="gallery">
-  <div class="gallery__container">
-    {% for post in instagram_posts %}
-    <div class="gallery__item">
-      <a href="{{ post.permalink }}" target="_blank">
-        {% if post.media_type == 'IMAGE' or post.media_type == 'CAROUSEL_ALBUM' %}
-        <img src="{{ post.media_url }}" alt="{{ post.caption }}">
-        {% elif post.media_type == 'VIDEO' %}
-        <video controls>
-          <source src="{{ post.media_url }}" type="video/mp4">
-        </video>
-        {% endif %}
-      </a>
-    </div>
-    {% endfor %}
-  </div>
+  <div class="home-gallery">
+    <h1 class="gallery__title">Gallery</h1>
+    {% include 'insta.html' %}
+</div>
 </section>
 {% comment %} ギャラリー終了 {% endcomment %}
 
 {% comment %} ニュース開始 {% endcomment %}
 <section class="news">
-  <h2>
-  </h2>
+  <h1 class="news__title">News</h1>
   <ul>
     {% for news in latest_news %}
     <li class="news-row">
