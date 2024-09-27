@@ -70,6 +70,7 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'static_pages/plan/templates'),
                  os.path.join(BASE_DIR, 'news/templates'),
                  os.path.join(BASE_DIR, 'contact/templates'),
+                 os.path.join(BASE_DIR, 'static_pages/common/templates')
                  ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -166,42 +167,42 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 #ログ出力の追加
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
 
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-        # 'home': {  # 特定のアプリだけに別の設定をする場合
-        #     'handlers': ['console'],
-        #     'level': 'INFO',  # 詳細なデバッグログは出さない
-        #     'propagate': False,  # 伝播しないように設定
-        # },
-    },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#         # 'home': {  # 特定のアプリだけに別の設定をする場合
+#         #     'handlers': ['console'],
+#         #     'level': 'INFO',  # 詳細なデバッグログは出さない
+#         #     'propagate': False,  # 伝播しないように設定
+#         # },
+#     },
     
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'dev',
-        },
-    },
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'dev',
+#         },
+#     },
     
-    'formatters': {
-        'dev': {
-            'format': '\t'.join([
-                '%(asctime)s',
-                '[%(levelname)s]',
-                '%(pathname)s(Line:%(lineno)d)',
-                '%(message)s',
-            ])
-        },
-    }
-}
+#     'formatters': {
+#         'dev': {
+#             'format': '\t'.join([
+#                 '%(asctime)s',
+#                 '[%(levelname)s]',
+#                 '%(pathname)s(Line:%(lineno)d)',
+#                 '%(message)s',
+#             ])
+#         },
+#     }
+# }
 
 # Read settings.json
 try:

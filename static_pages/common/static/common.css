@@ -1,0 +1,8 @@
+body {
+  font-family: "Hina Mincho", system-ui;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: #E9E9E9;
+  z-index: 1000;
+}

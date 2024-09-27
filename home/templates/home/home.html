@@ -1,204 +1,135 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block title %}Document{% endblock %}
+{% block extra_static %}
+  <link rel="stylesheet" href="{% static 'home/css/css-reset.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/swiper-bundle.min.css' %}">
+  <script src="{% static 'home/js/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'home/js/swiper.js' %}"></script>
+{% endblock %}
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% block content %}
 
-    {% comment %} スタイル開始 {% endcomment %}
-    <link rel="stylesheet" href="{% static 'home/css/css-reset.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/swiper-bundle.min.css' %}">
+{% include 'header.html' %}
 
-    {% comment %} スタイル終了 {% endcomment %}
+<section class="top">
+  <h1 class="top__name">Kaizaki Maria</h1>
+  <div class="top__inner">
+    <div class="top__left">
+      <img src="{% static 'home/images/top-left.jpg' %}" class="top__image-left">
+      <span class="top__vertical-left">与える写真 </span>
+    </div>
+    <div class="top__right">
+      <img src="{% static 'home/images/top-right.jpg' %}" class="top__image-right">
+      <span class="top__vertical-right">PHOTOGRAPHER</span>
+    </div>
+  </div>
+</section>
+{% comment %} トップ画像終了 {% endcomment %}
 
-    {% comment %} フォント開始 {% endcomment %}
+{% comment %} 紹介開始 {% endcomment %}
+<section class="intsliroduce">
+  <div class="introduce__inner">
+    <div class="introduce__image">
+      <img src="{% static 'home/images/top-about.jpg' %}" alt="">
+    </div>
+    <div class="introduce__sentence">
+      <h1 class="title">と る も の で は な く<br>
+        与 え る も の で あ り た い<br><br></h1>
+      <span class="introduce__jpn">
+        無限の刻を閉じ込めた一枚<br>
+        未来の君にその瞬間の魂を捧げる<br>
+        ただの記憶ではなく、心を震わせる力<br>
+        それが私の「与える写真」<br><br>
+      </span>
+      <span class="introduce__eng">
+        A single frame, imprisoning the endless flow og time. <br>
+        To your future self, I offer the soul of that fleeting moment. <br>
+        Not just a mere record, but a force that shakes the very core of your being. <br>
+        This is my "Gifted Photography".
+      </span>
+    </div>
+  </div>
+</section>
+{% comment %} 紹介終了 {% endcomment %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400..700&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-
-    {% comment %} フォント終了 {% endcomment %}
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-
-  </head>
-
-  <body>
-    <div id="global-container">
-      <div id="container">
-        <div class="mobile-menu__cover"></div>
-
-        {% comment %} ヘッダー開始 {% endcomment %}
-        {% include 'header.html' %}
-
-        {% comment %} ヘッダー終了 {% endcomment %}
-
-        
-        <main>
-          {% comment %} トップ画像開始 {% endcomment %}
-          <section class="top">
-            <h1 class="top__name">Kaizaki Maria</h1>
-            <div class="top__inner">
-              <div class="top__left">
-                <img src="{% static 'home/images/top-left.jpg' %}" class="top__image-left">
-                <span class="top__vertical-left">与える写真 </span>
-              </div>
-              <div class="top__right">
-                <img src="{% static 'home/images/top-right.jpg' %}" class="top__image-right">
-                <span class="top__vertical-right">PHOTOGRAPHER</span>
-              </div>
-            </div>
-          </section>
-          {% comment %} トップ画像終了 {% endcomment %}
-
-          {% comment %} 紹介開始 {% endcomment %}
-          <section class="intsliroduce">
-            <div class="introduce__inner">
-              <div class="introduce__image">
-                <img src="{% static 'home/images/top-about.jpg' %}" alt="">
-              </div>
-              <div class="introduce__sentence">
-                <h1 class="title">と る も の で は な く<br>
-                  与 え る も の で あ り た い<br><br></h1>
-                <span class="introduce__jpn">
-                  無限の刻を閉じ込めた一枚<br>
-                  未来の君にその瞬間の魂を捧げる<br>
-                  ただの記憶ではなく、心を震わせる力<br>
-                  それが私の「与える写真」<br><br>
-                </span>
-                <span class="introduce__eng">
-                  A single frame, imprisoning the endless flow og time. <br>
-                  To your future self, I offer the soul of that fleeting moment. <br>
-                  Not just a mere record, but a force that shakes the very core of your being. <br>
-                  This is my "Gifted Photography".
-                </span>
-              </div>
-            </div>
-          </section>
-          {% comment %} 紹介終了 {% endcomment %}
-
-          {% comment %} ヒーロースライダー開始 {% endcomment %}
-          <section class="hero">
-            <div class="swiper">
-              <!-- スライドのラッパー -->
-              <div class="swiper-wrapper">
-                <!-- スライド -->
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-01.jpg' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-03.jpg' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-05.jpg' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-07.jpg' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-09.jpg' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-02.jpg' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-04.jpg' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-06.jpg' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-08.jpg' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                  <img src="{% static 'home/images/slide-10.jpg' %}" alt="">
-                </div>
-              </div>
-            </div>
-          </section>
-          {% comment %} ヒーロースライダー終了 {% endcomment %}
-
-          {% comment %} ギャラリー開始 {% endcomment %}
-          <section class="gallery">
-            <div class="gallery__container">
-              {% for post in instagram_posts %}
-              <div class="gallery__item">
-                <a href="{{ post.permalink }}" target="_blank">
-                  {% if post.media_type == 'IMAGE' or post.media_type == 'CAROUSEL_ALBUM' %}
-                  <img src="{{ post.media_url }}" alt="{{ post.caption }}">
-                  {% elif post.media_type == 'VIDEO' %}
-                  <video controls>
-                    <source src="{{ post.media_url }}" type="video/mp4">
-                  </video>
-                  {% endif %}
-                </a>
-              </div>
-              {% endfor %}
-            </div>
-          </section>
-          {% comment %} ギャラリー終了 {% endcomment %}
-
-          {% comment %} ニュース開始 {% endcomment %}
-          <section class="news">
-            <h2>
-            </h2>
-            <ul>
-              {% for news in latest_news %}
-              <li class="news-row">
-                <div class="news-date">{{ news.published_date|date:"Y-m-d" }}</div>
-                <div class="news-content">{{ news.title }}</div>
-              </li>
-            {% endfor %}
-            </ul>
-            <div class="all-view">
-              <a href="{% url 'news' %}">ALL VIEW</a>            
-            </div>
-          </section>
-        
-        
-          {% comment %} ニュース終了 {% endcomment %}
-        </main>
-        
-
+{% comment %} ヒーロースライダー開始 {% endcomment %}
+<section class="hero">
+  <div class="swiper">
+    <!-- スライドのラッパー -->
+    <div class="swiper-wrapper">
+      <!-- スライド -->
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-01.jpg' %}" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-03.jpg' %}" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-05.jpg' %}" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-07.jpg' %}" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-09.jpg' %}" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-02.jpg' %}" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-04.jpg' %}" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-06.jpg' %}" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-08.jpg' %}" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="{% static 'home/images/slide-10.jpg' %}" alt="">
       </div>
     </div>
+  </div>
+</section>
+{% comment %} ヒーロースライダー終了 {% endcomment %}
 
-    {% comment %} js適用開始 {% endcomment %}
-    <script src="{% static 'home/js/swiper-bundle.min.js' %}"></script>
-    <script src="{% static 'home/js/swiper.js' %}"></script>
-    <script src="{% static 'common/js/common.js' %}"></script>
+{% comment %} ギャラリー開始 {% endcomment %}
+<section class="gallery">
+  <div class="gallery__container">
+    {% for post in instagram_posts %}
+    <div class="gallery__item">
+      <a href="{{ post.permalink }}" target="_blank">
+        {% if post.media_type == 'IMAGE' or post.media_type == 'CAROUSEL_ALBUM' %}
+        <img src="{{ post.media_url }}" alt="{{ post.caption }}">
+        {% elif post.media_type == 'VIDEO' %}
+        <video controls>
+          <source src="{{ post.media_url }}" type="video/mp4">
+        </video>
+        {% endif %}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% comment %} ギャラリー終了 {% endcomment %}
 
-
-    {% comment %} js適用終了 {% endcomment %}
-  </body>
-
-
-</html>
+{% comment %} ニュース開始 {% endcomment %}
+<section class="news">
+  <h2>
+  </h2>
+  <ul>
+    {% for news in latest_news %}
+    <li class="news-row">
+      <div class="news-date">{{ news.published_date|date:"Y-m-d" }}</div>
+      <div class="news-content">{{ news.title }}</div>
+    </li>
+  {% endfor %}
+  </ul>
+  <div class="all-view">
+    <a href="{% url 'news' %}">ALL VIEW</a>            
+  </div>
+</section>
+{% endblock %}

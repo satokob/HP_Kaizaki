@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'news/css/detail.css' %}">
-  <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="{% static 'common/js/common.js' %}"></script>
-  <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-  {% include 'header.html' %}
+{% load static %}
+
+{% block title %}Document{% endblock %}
+{% block extra_static %}
+  <link rel="stylesheet" href="{% static 'news/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
 
   <section class="hero">
     <div class="hero__image">
@@ -24,5 +22,4 @@
     </div>
 </section>
 
-</body>
-</html>
+{% endblock %}

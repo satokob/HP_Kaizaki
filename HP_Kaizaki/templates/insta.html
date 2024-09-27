@@ -1,0 +1,17 @@
+<div class="gallery-grid">
+  {% for post in instagram_posts %}
+      <div class="gallery-item">
+          {% if post.media_type == 'IMAGE' %}
+              <a href="{{ post.permalink }}" target="_blank">
+                  <img src="{{ post.media_url }}" alt="{{ post.caption }}">
+              </a>
+          {% elif post.media_type == 'VIDEO' %}
+              <a href="{{ post.permalink }}" target="_blank">
+                  <video controls>
+                      <source src="{{ post.media_url }}" type="video/mp4">
+                  </video>
+              </a>
+          {% endif %}
+      </div>
+  {% endfor %}
+</div>

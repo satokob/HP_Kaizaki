@@ -1,18 +1,15 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Kaizaki Maria</title>
-    <link rel="stylesheet" href="{% static 'about/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="{% static 'common/js/common.js' %}"></script>
-</head>
-<body>
-    {% include 'header.html' %}
+{% block title %}Document{% endblock %}
+{% block extra_static %}
+  <link rel="stylesheet" href="{% static 'about/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
 
     <div class="about">
         <div class="about__container">
@@ -29,7 +26,7 @@
                     <p>1989年長野県生まれ、大阪府在住<br>
                         専門大学卒業後、カメラスタジオを経てフリーランスの写真家に。<br>
                         雑誌、企業サイト、インスタグラムで活動中</p>
-                    <h2>Kaizaki Maria</h2>
+                    <h1>Kaizaki Maria</h1>
                     <p>Photographer</p>
                     <p>Born in Nagano, Japan, in 1989. Currently resides in Osaka.<br>
                         After graduating from a vocational college, worked at a photography studio before becoming a freelance photographer. <br>
@@ -39,4 +36,4 @@
         </div>
     </div>
 </body>
-</html>
+{% endblock %}

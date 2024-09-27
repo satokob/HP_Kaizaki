@@ -1,18 +1,15 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan - Kaizaki Maria</title>
-    <link rel="stylesheet" href="{% static 'plan/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="{% static 'common/js/common.js' %}"></script>
-</head>
-<body>
-    {% include 'header.html' %}
+{% block title %}Document{% endblock %}
+{% block extra_static %}
+  <link rel="stylesheet" href="{% static 'plan/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
 
     <div class="plan">
         <div class="plan__header">
@@ -95,5 +92,4 @@
           </div>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}

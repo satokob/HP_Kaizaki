@@ -1,20 +1,15 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ</title>
-    <link rel="stylesheet" href="{% static 'contact/css/style.css' %}">
+{% block title %}Document{% endblock %}
+{% block extra_static %}
+  <link rel="stylesheet" href="{% static 'contact/css/style.css' %}">
+{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="{% static 'common/js/common.js' %}"></script>
+{% block content %}
 
-</head>
-<body>
-    {% include 'header.html' %}
+{% include 'header.html' %}
 
     <div class="contact-container">
         <h1>お問い合わせ</h1>
@@ -44,5 +39,4 @@
             </form>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
