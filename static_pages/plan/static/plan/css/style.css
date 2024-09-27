@@ -21,6 +21,7 @@
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
+  aspect-ratio: 1/1;
 }
 .plan__item-details {
   flex-basis: 55%;
