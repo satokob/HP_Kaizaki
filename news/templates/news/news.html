@@ -5,19 +5,17 @@
 {% block title %}Document{% endblock %}
 {% block extra_static %}
   <link rel="stylesheet" href="{% static 'news/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'common.css' %}">
 {% endblock %}
 
 {% block content %}
 
 {% include 'header.html' %}
 
-    <section class="hero">
-        <div class="hero__image">
-            <img src="{% static 'images/hero-image.jpg' %}" alt="Hero Image">
-            <div class="hero__overlay">
-                <h1>News</h1>
-                <p>お知らせ</p>
-            </div>
+    <section class="title">
+        <div class="title__overlay">
+            <h1 class="title__main">News</h1>
+            <p class="title__sub">お知らせ</p>
         </div>
     </section>
 

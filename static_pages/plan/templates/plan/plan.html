@@ -5,19 +5,19 @@
 {% block title %}Document{% endblock %}
 {% block extra_static %}
   <link rel="stylesheet" href="{% static 'plan/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'common.css' %}">
 {% endblock %}
 
 {% block content %}
 
 {% include 'header.html' %}
 
-    <div class="plan">
-        <div class="plan__header">
-            <div class="plan__header-content">
-                <h1>Plan</h1>
-                <p>撮影・レッスンプラン</p>
-            </div>
-        </div>
+<section class="title">
+    <div class="title__overlay">
+        <h1 class="title__main">Plan</h1>
+        <p class="title__sub">撮影プラン</p>
+    </div>
+  </section>
 
         <div class="plan__items">
 

@@ -14,12 +14,9 @@ def get_instagram_posts(max_items=9):
 
         data = response.json()
 
-        # フィルタリングしてIMAGEかVIDEOのみ追加
-        for media in data['data']:
-            if media['media_type'] in ['IMAGE', 'VIDEO']:
-                media_list.append(media)
-                if len(media_list) >= max_items:
-                    break
+        media_list.extend(data['data'])  # 全ての投稿をリストに追加
+        if len(media_list) >= max_items:
+            break
 
         # 次ページがある場合はpaging.nextを利用する
         if 'paging' in data and 'next' in data['paging']:

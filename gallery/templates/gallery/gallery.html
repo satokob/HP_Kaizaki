@@ -5,17 +5,24 @@
 {% block title %}Document{% endblock %}
 {% block extra_static %}
   <link rel="stylesheet" href="{% static 'gallery/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'common.css' %}">
 {% endblock %}
 
 {% block content %}
 
 {% include 'header.html' %}
-  <section class="gallery">
-    <h1>Instagram Gallery</h1>
-    <p>インスタグラム ギャラリー</p>
+
+<section class="title">
+  <div class="title__overlay">
+      <h1 class="title__main">Gallery</h1>
+      <p class="title__sub">ギャラリー</p>
+  </div>
+</section>
+
+<section class="gallery">
     <div class="gallery-gallery">
         {% include 'insta.html' %}
     </div>
     
-  </section>
+</section>
 {% endblock %} 
