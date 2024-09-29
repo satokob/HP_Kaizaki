@@ -63,7 +63,9 @@ body {
   display: block;
   width: 100%;
   padding: 12px;
-  background-color: #8b8b8b;
+  background-image: url("{%static 'plan/images/daily.jpg'%}");  // 背景画像のパスを設定
+  background-size: cover;  // ボタン全体に画像を拡大縮小
+  background-position: center;  // 画像を中央に配置
   color: #fff;
   font-size: 1.2rem;
   text-align: center;
@@ -71,11 +73,12 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);  // マウスオーバー時に半透明の黒を重ねる
+  }
 }
 
-.submit-btn:hover {
-  background-color: #4e5051;
-}
 
 /* リンク */
 a {
