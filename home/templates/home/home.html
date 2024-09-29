@@ -101,7 +101,10 @@
   <div class="home-gallery">
     <h1 class="gallery__title">Gallery</h1>
     {% include 'insta.html' %}
-</div>
+  </div>
+  <div class="all-view">
+    <a href="{% url 'gallery' %}">VIEW MORE</a>            
+  </div>
 </section>
 {% comment %} ギャラリー終了 {% endcomment %}
 
@@ -117,7 +120,7 @@
   {% endfor %}
   </ul>
   <div class="all-view">
-    <a href="{% url 'news' %}">ALL VIEW</a>            
+    <a href="{% url 'news' %}">VIEW MORE</a>            
   </div>
 </section>
 {% endblock %}

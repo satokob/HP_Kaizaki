@@ -11,7 +11,12 @@
                       <source src="{{ post.media_url }}" type="video/mp4">
                   </video>
               </a>
+            {% elif post.media_type == 'CAROUSEL_ALBUM' %}
+            <a href="{{ post.permalink }}" target="_blank">
+                <img src="{{ post.media_url }}" alt="{{ post.caption }}">
+            </a>
           {% endif %}
       </div>
   {% endfor %}
+
 </div>

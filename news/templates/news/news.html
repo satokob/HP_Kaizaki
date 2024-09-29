@@ -12,29 +12,29 @@
 
 {% include 'header.html' %}
 
-    <section class="title">
-        <div class="title__overlay">
-            <h1 class="title__main">News</h1>
-            <p class="title__sub">お知らせ</p>
-        </div>
-    </section>
+<section class="title">
+    <div class="title__overlay">
+        <h1 class="title__main">News</h1>
+        <p class="title__sub">お知らせ</p>
+    </div>
+</section>
 
-    <section class="news-list">
-        <div class="container">
-            {% for news_item in news_list %}
-                <div class="news-item">
-                    <p>{{ news_item.published_date|date:"Y-m-d" }}</p>
-                    <a href="{% url 'news_detail' news_item.id %}">{{ news_item.title }}</a> <!-- タイトルにリンクを追加 -->
-                </div>
-            {% empty %}
-                <p>現在お知らせはありません。</p>
-            {% endfor %}
-        </div>
-    
-        <div class="pagination">
-            <span class="prev">{% if news_list.has_previous %}<a href="?page={{ news_list.previous_page_number }}">前のページ</a>{% endif %}</span>
-            <span class="next">{% if news_list.has_next %}<a href="?page={{ news_list.next_page_number }}">次のページ</a>{% endif %}</span>
-        </div>
-    </section>
+<section class="news-list">
+    <div class="container">
+        {% for news_item in news_list %}
+            <div class="news-item">
+                <p>{{ news_item.published_date|date:"Y-m-d" }}</p>
+                <a href="{% url 'news_detail' news_item.id %}">{{ news_item.title }}</a> <!-- タイトルにリンクを追加 -->
+            </div>
+        {% empty %}
+            <p>現在お知らせはありません。</p>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        <span class="prev">{% if news_list.has_previous %}<a href="?page={{ news_list.previous_page_number }}">前のページ</a>{% endif %}</span>
+        <span class="next">{% if news_list.has_next %}<a href="?page={{ news_list.next_page_number }}">次のページ</a>{% endif %}</span>
+    </div>
+</section>
     
 {% endblock %}

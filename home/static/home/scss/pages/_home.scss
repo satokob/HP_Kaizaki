@@ -274,10 +274,9 @@ body {
 
 
 .gallery {
-  padding: 100px 0;
+  padding: 100px 250px;
 
   &__title {
-    padding-left: 10%;
     font-size: 2.5rem;
   }
   
@@ -289,7 +288,7 @@ body {
   }
 
   .gallery-item {
-    width: 80%; // グリッドセル全体を使う
+    width: 100%; // グリッドセル全体を使う
     padding-bottom: 80%; // 正方形にするための設定
     position: relative; // 要素を絶対配置するために必要
 
@@ -314,10 +313,10 @@ body {
 
 
 .news {
-  padding: 20px;
+  padding: 100px 250px;
   
   &__title {
-    padding-left: 10%;
+
     font-size: 2.5rem;
   }
   
@@ -351,36 +350,37 @@ body {
     }
   }
   
-  .all-view {
-    text-align: right;
-    margin-top: 20px;
+
+}
+
+.all-view {
+  text-align: right;
+  margin-top: 20px;
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
     
-    a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      position: relative;
-      
-      &:hover {
-        color: #555;
-      }
-      
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #333;
-        transition: background-color 0.3s;
-      }
-      
-      &:hover::after {
-        background-color: #555;
-      }
+    &:hover {
+      color: #555;
+    }
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #333;
+      transition: background-color 0.3s;
+    }
+    
+    &:hover::after {
+      background-color: #555;
     }
   }
 }
-
 

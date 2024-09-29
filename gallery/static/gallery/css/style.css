@@ -35,4 +35,31 @@
 }
 .gallery .gallery-item video {
   border-radius: 5px;
+}
+
+.all-view {
+  text-align: right;
+  margin-top: 20px;
+}
+.all-view a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+.all-view a:hover {
+  color: #555;
+}
+.all-view a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: background-color 0.3s;
+}
+.all-view a:hover::after {
+  background-color: #555;
 }/*# sourceMappingURL=style.css.map */
