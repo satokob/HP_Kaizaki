@@ -1,0 +1,50 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.about__container {
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  max-width: 1500px;
+}
+.about__title {
+  font-family: Roboto;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 24px;
+  margin-right: 20px;
+  color: #333;
+}
+.about__content {
+  display: flex;
+  align-items: center;
+}
+.about__image {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+.about__image img {
+  border-radius: 5px;
+  max-width: 400px;
+  height: auto;
+}
+.about__text h1 {
+  font-size: 35px;
+  margin-bottom: 10px;
+  color: #000;
+}
+.about__text h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #666;
+}
+.about__text p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #333;
+}/*# sourceMappingURL=style.css.map */

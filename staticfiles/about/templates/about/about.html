@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Document{% endblock %}
+{% block extra_static %}
+  <link rel="stylesheet" href="{% static 'about/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
+
+    <div class="about">
+        <div class="about__container">
+            <div class="about__title">
+                <h2>ABOUT</h2>
+            </div>
+            <div class="about__content">
+                <div class="about__image">
+                    <img src="{% static 'about/images/about.jpg' %}" alt="Kaizaki Maria">
+                </div>
+                <div class="about__text">
+                    <h1>かいざきまりあ</h1>
+                    <h2>写真家</h2>
+                    <p>1989年長野県生まれ、大阪府在住<br>
+                        専門大学卒業後、カメラスタジオを経てフリーランスの写真家に。<br>
+                        雑誌、企業サイト、インスタグラムで活動中</p>
+                    <h1>Kaizaki Maria</h1>
+                    <p>Photographer</p>
+                    <p>Born in Nagano, Japan, in 1989. Currently resides in Osaka.<br>
+                        After graduating from a vocational college, worked at a photography studio before becoming a freelance photographer. <br>
+                        Currently active in magazines, corporate websites, and Instagram.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

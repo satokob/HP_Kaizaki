@@ -1,0 +1,78 @@
+@charset "UTF-8";
+.hero {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+.hero .hero__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero .hero__overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  text-align: center;
+}
+.hero .hero__overlay h1 {
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+.hero .hero__overlay p {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* ニュースリストの全体レイアウト */
+/* ニュースリストの全体レイアウト */
+.news-list {
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.news-list .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.news-list .news-item {
+  display: flex;
+  justify-content: center; /* 日付とタイトルを横並びにし、画面中央に寄せる */
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 1rem;
+  /* 日付のスタイル */
+  /* タイトルのスタイル */
+}
+.news-list .news-item p {
+  margin: 0;
+}
+.news-list .news-item p:first-of-type {
+  margin-right: 1rem; /* 日付とタイトルの間にスペースを追加 */
+  font-size: 1rem;
+  color: #888;
+  white-space: nowrap; /* 日付が折り返されないようにする */
+}
+.news-list .news-item a {
+  font-size: 1.2rem;
+  color: #333;
+  text-decoration: none; /* リンクの下線を消す */
+  text-align: left; /* タイトルを左詰めに */
+}
+.news-list .news-item a:hover {
+  color: #555; /* ホバー時に少し色を変える */
+}
+.news-list .pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.news-list .pagination a {
+  color: #333;
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Document{% endblock %}
+{% block extra_static %}
+  <link rel="stylesheet" href="{% static 'plan/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'common.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
+
+<section class="title">
+    <div class="title__overlay">
+        <h1 class="title__main">Plan</h1>
+        <p class="title__sub">撮影プラン</p>
+    </div>
+</section>
+
+<section>
+    <div class="plan__items">
+
+        <div class="plan__item">
+            <div class="plan__item-image">
+                <img src="{% static 'plan/images/daily.jpg' %}" alt="Couple/Friend Shooting">
+            </div>
+            <div class="plan__item-details">
+                <h3>いつもの日常を特別に残すプラン</h3>
+                <p>￥27,000</p>
+                <p>納品データ150枚保証</p>
+                <p>撮影時間 : 1時間30分程度</p>
+                <p>家族写真、カップルフォト、フレンドフォト、旅行の記念、ニューボーンフォトなど、カジュアルな撮影をご希望される方向けのプランとなります。</p>
+            </div>
+        </div>
+
+        <div class="plan__item">
+            <div class="plan__item-image">
+                <img src="{% static 'plan/images/special.jpg' %}" alt="Couple/Friend Shooting">
+            </div>
+            <div class="plan__item-details">
+                <h3>特別な日を素敵に残すプラン</h3>
+                <p>￥30,000</p>
+                <p>納品データ150枚保証</p>
+                <p>撮影時間 : 1時間30分程度</p>
+                <p>お宮参り、七五三、成人式、入学式、卒業式など、人生の節目の撮影をご希望される方向けのプランとなります。</p>
+            </div>
+        </div>
+
+        <div class="plan__item">
+            <div class="plan__item-image">
+                <img src="{% static 'plan/images/marriage.jpg' %}" alt="Individual Shooting">
+            </div>
+            <div class="plan__item-details">
+                <h3>前撮りプラン</h3>
+                <p>￥35,000 ※なお、お着替えされます場合には別途 ¥15,000を頂戴します。</p>
+                <p>データ150枚保証</p>
+                <p>撮影時間 : 2時間程度</p>
+                <p>お二人の決意と、これから始まる素晴らしい人生の節目に</p>
+            </div>
+        </div>
+
+        <div class="plan__item">
+        <div class="plan__item-image">
+            <img src="{% static 'plan/images/other.jpg' %}" alt="Individual Shooting">
+        </div>
+        <div class="plan__item-details">
+            <h3>その他</h3>
+            <p>結婚式/披露宴、個別レッスン(撮影練習、編集指導)なども承っております。</p>
+            <p>料金については、都度お見積もりの上ご案内いたします。</p>
+        </div>
+        </div>
+
+        <div class="plan__policy">
+          <div class="plan__policy-caution">
+            <h2>注意事項</h2>
+            <p>・お支払いは、撮影前日までに銀行振込をお願いします。</p>
+            <p>・料金はすべて税込価格となります。</p>
+            <p>・すべてのプランに、別途交通費を頂戴いたします。</p>
+            <p>・撮影場所により、撮影許可、施設使用料が発生する場合があるため、<br>お客様ご自身にて許可確認および施設使用料をご負担いただきます。</p>
+          </div>
+
+          <div class="plan__policy-cancel">
+            <h2>キャンセルポリシー</h2>
+            <p>・撮影当日のキャンセル料 : 100%</p>
+            <p>・撮影前日のキャンセル料 : 50%</p>
+            <p>・撮影当日の延長料 : 5000円</p>
+            <p>※撮影当日の天候不良は、撮影3時間前までにご判断くださればキャンセル料発生しません。</p>
+            <p>※無断キャンセルされた方は、次回以降の予約をお断りします。</p>
+          </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

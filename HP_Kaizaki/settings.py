@@ -157,6 +157,9 @@ STATICFILES_FINDERS = [
     'compressor.finders.CompressorFinder',
     'sass_processor.finders.CssFinder',
 ]
+SASS_PROCESSOR_INCLUDE_DIRS = [
+    BASE_DIR / 'common/static/scss',  # 共通のSCSSディレクトリを指定
+]
 
 # Media files (アップロードファイル)
 MEDIA_URL = '/media/'

@@ -1,0 +1,388 @@
+@import 'globals/mq';
+
+// ベーススタイル
+body {
+  font-family: "Hina Mincho", system-ui;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: #E9E9E9;
+  z-index: 1000;
+}
+
+.header {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.main_h {
+  position: fixed;
+  top: 0px;
+  max-height: 70px;
+  z-index: 999;
+  width: 100%;
+  padding-top: 17px;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s;
+  opacity: 0;
+  top: -100px;
+  padding-bottom: 6px;
+  font-family: "Montserrat", sans-serif;
+
+  &.sticky {
+    background-color: rgba(255, 255, 255, 0.93);
+    opacity: 1;
+    top: 0px;
+    border-bottom: 1px solid gainsboro;
+  }
+}
+
+
+.header__nav {
+  float: right;
+  width: 60%;
+  ul {
+    padding-right: 50px;
+    list-style: none;
+    overflow: hidden;
+    text-align: right;
+    float: right;
+    li {
+      display: inline-block;
+      margin-left: 35px;
+      line-height: 1.5;
+      a {
+        color: #888888;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 22px;
+  top: 0;
+  width: 30px;
+  transition: all 200ms ease-in;
+
+  span {
+    width: 30px;
+    height: 4px;
+    margin-bottom: 6px;
+    border-radius: 1000px;
+    background: #8f8f8f;
+    display: block;
+  }
+
+  @media only screen and (max-width: 766px) {
+    display: block;
+  }
+}
+
+.top {
+
+  padding-top: 80px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+
+  &__name {
+    font-family: "Nunito Sans";
+    font-weight: 600;
+    font-size: 4rem;
+    color: white;
+    position: absolute;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+    position: relative;
+    max-width: 1400px;
+    width: 100%;
+    height: 800px;
+  }
+
+  &__left, &__right {
+    position: relative;
+    display: flex;
+    align-items: stretch; /* 縦方向に合わせる */
+  }
+
+  &__left {
+    width: 70%;
+    padding-right: 15px; /* 画像間の余白 */
+  }
+
+  &__right {
+    width: 30%;
+  }
+
+  &__image-left, &__image-right {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; /* 画像の縦横比を維持しつつトリミング */
+  }
+
+  &__vertical-left, &__vertical-right {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__vertical-left {
+    font-family: "Zen Kaku Gothic New";
+    font-weight: 700;
+    font-size: 3rem; /* 基本フォントサイズ */
+    line-height: 1.2;
+    letter-spacing: 0.6em;
+    color: black;
+    left: -28px; /* 画像の外に半分出るように調整 */
+    writing-mode: vertical-rl;
+    height: 100%;
+  }
+
+  &__vertical-right {
+    font-family: Roboto;
+    font-weight: 800;
+    font-size: 3.5rem; /* 基本フォントサイズ */
+    color: transparent;
+	    -webkit-text-stroke: 3px rgb(255, 255, 255);
+    right: -41px; /* 画像の外に半分出るように調整 */
+    writing-mode: vertical-lr;
+  }
+
+  /* 文字サイズの調整 */
+  @media (max-width: 1024px) {
+    &__name {
+      font-size: 1.8rem;
+    }
+    &__vertical-left {
+      font-size: 1.8rem;
+    }
+    &__vertical-right {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__name {
+      font-size: 1.6rem;
+    }
+    &__vertical-left {
+      font-size: 1.2rem;
+    }
+    &__vertical-right {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__name {
+      font-size: 1.4rem;
+    }
+    &__vertical-left {
+      font-size: 1rem;
+    }
+    &__vertical-right {
+      font-size: 1rem;
+    }
+  }
+}
+
+.introduce {
+  padding: 80px 0 100px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: center; /* 全体を中央揃え */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  &__image {
+    flex: 1;
+    max-width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px;
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 70%; /* 画像がコンテナの幅を超えないように */
+      max-height: 70%; /* 画像がコンテナの高さを超えないように */
+      object-fit: contain; /* アスペクト比を保ちながら画像を表示 */
+      margin: 0 auto; /* 画像を中央に配置 */
+    }
+  }
+
+  &__sentence {
+    flex: 1;
+    max-width: 50%; /* テキスト部分は最大幅50%に */
+    padding-left: 20px;
+    color: #333;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60%;
+    white-space: nowrap;
+
+    .title {
+      font-family: "Noto Sans";
+      font-weight: bold;
+      font-size: 2.5rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      color: #111;
+      letter-spacing: 0.11em;
+    }
+
+    .introduce__jpn {
+      font-family: "Noto Sans";
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .introduce__eng {
+      font-family: "Noto Serif", serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+  }
+}
+
+
+.gallery {
+  padding: 100px 250px;
+
+  &__title {
+    font-size: 2.5rem;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3列表示
+    grid-gap: 10px; // 各投稿の間のスペースを調整
+    justify-items: center;
+  }
+
+  .gallery-item {
+    width: 100%; // グリッドセル全体を使う
+    padding-bottom: 80%; // 正方形にするための設定
+    position: relative; // 要素を絶対配置するために必要
+
+    a, video, img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // 正方形に収まるようにトリミング
+    }
+
+    img {
+      border-radius: 5px; // 角を少し丸める
+    }
+
+    video {
+      border-radius: 5px;
+    }
+  }
+}
+
+
+.news {
+  padding: 100px 250px;
+  
+  &__title {
+
+    font-size: 2.5rem;
+  }
+  
+  p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      
+      .news-row {
+        display: flex;
+      }
+      .news-date {
+        flex: 0 0 40%;
+        text-align: center;
+      }
+      .news-content {
+        flex: 0 0 60%;
+      }
+    }
+  }
+  
+
+}
+
+.all-view {
+  text-align: right;
+  margin-top: 20px;
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    
+    &:hover {
+      color: #555;
+    }
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #333;
+      transition: background-color 0.3s;
+    }
+    
+    &:hover::after {
+      background-color: #555;
+    }
+  }
+}
+
