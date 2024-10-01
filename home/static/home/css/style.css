@@ -87,7 +87,6 @@ body {
   display: flex;
   justify-content: center;
   padding-bottom: 80px;
-  /* 文字サイズの調整 */
 }
 .top__name {
   font-family: "Nunito Sans";
@@ -96,7 +95,7 @@ body {
   color: white;
   position: absolute;
   left: 40%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -110%);
   z-index: 2;
 }
 .top__inner {
@@ -105,17 +104,17 @@ body {
   align-items: stretch;
   position: relative;
   max-width: 1400px;
-  width: 100%;
+  width: 90%;
   height: 800px;
 }
 .top__left, .top__right {
   position: relative;
   display: flex;
-  align-items: stretch; /* 縦方向に合わせる */
+  align-items: stretch;
 }
 .top__left {
   width: 70%;
-  padding-right: 15px; /* 画像間の余白 */
+  padding-right: 15px; /* 左側の画像の余白 */
 }
 .top__right {
   width: 30%;
@@ -124,7 +123,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover; /* 画像の縦横比を維持しつつトリミング */
+     object-fit: cover;
 }
 .top__vertical-left, .top__vertical-right {
   position: absolute;
@@ -135,49 +134,52 @@ body {
 .top__vertical-left {
   font-family: "Zen Kaku Gothic New";
   font-weight: 700;
-  font-size: 3rem; /* 基本フォントサイズ */
+  font-size: 3rem;
   line-height: 1.2;
   letter-spacing: 0.6em;
   color: black;
-  left: -28px; /* 画像の外に半分出るように調整 */
+  left: -28px;
   writing-mode: vertical-rl;
   height: 100%;
 }
 .top__vertical-right {
   font-family: Roboto;
   font-weight: 800;
-  font-size: 3.5rem; /* 基本フォントサイズ */
+  font-size: 3.5rem;
   color: transparent;
   -webkit-text-stroke: 3px rgb(255, 255, 255);
-  right: -41px; /* 画像の外に半分出るように調整 */
+  right: -41px;
   writing-mode: vertical-lr;
 }
-@media (max-width: 1024px) {
+@media screen and (max-width: 428px) {
   .top__name {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    content: "Kaizaki Maria";
+    text-align: center;
+    margin: 0 auto;
   }
-  .top__vertical-left {
-    font-size: 1.8rem;
+  .top__vertical-left, .top__vertical-right {
+    display: none;
   }
-  .top__vertical-right {
-    font-size: 1.3rem;
+  .top__right {
+    display: none;
   }
-}
-
-@media (max-width: 480px) {
-  .top__name {
-    font-size: 2rem;
+  .top__inner {
+    justify-content: center;
   }
-  .top__vertical-left {
-    font-size: 1rem;
-  }
-  .top__vertical-right {
-    font-size: 1rem;
+  .top__left {
+    width: 50%;
+    padding-right: 0;
   }
 }
 
 .introduce {
   padding: 80px 0 100px 0;
+}
+@media screen and (max-width: 428px) {
+  .introduce {
+    padding-bottom: 100px;
+  }
 }
 .introduce__inner {
   display: flex;
@@ -228,6 +230,11 @@ body {
   color: #111;
   letter-spacing: 0.11em;
 }
+@media screen and (max-width: 428px) {
+  .introduce__sentence .title {
+    font-size: 2rem;
+  }
+}
 .introduce__sentence .introduce__jpn {
   font-family: "Noto Sans";
   font-weight: 500;
@@ -244,6 +251,11 @@ body {
 
 .gallery {
   padding: 100px 250px;
+}
+@media screen and (max-width: 428px) {
+  .gallery {
+    padding: 100px 20px;
+  }
 }
 .gallery__title {
   font-size: 2.5rem;
@@ -277,6 +289,11 @@ body {
 
 .news {
   padding: 100px 250px;
+}
+@media screen and (max-width: 428px) {
+  .news {
+    padding: 100px 20px;
+  }
 }
 .news__title {
   font-size: 2.5rem;
