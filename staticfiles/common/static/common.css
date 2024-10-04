@@ -7,6 +7,10 @@ body {
   z-index: 1000;
 }
 
+body.sticky-active {
+  padding-top: 150px; /* ヘッダの高さに合わせて調整 */
+}
+
 .title {
   position: relative;
   width: 100%;

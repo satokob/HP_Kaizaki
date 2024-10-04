@@ -40,8 +40,10 @@ $(document).ready(function() {
       if ($(document).height() <= $(window).height()) {
           // スクロールできない場合、ヘッダーを表示
           $('.main_h').addClass('sticky');
+          $('body').addClass('sticky-active');
       } else {
         $('.main_h').removeClass('sticky');
+        $('body').removeClass('sticky-active');
       }
   }
 
