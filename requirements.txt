@@ -10,8 +10,10 @@ django-js-asset==2.2.0
 django-sass==1.1.0
 django-sass-processor==1.4.1
 django-summernote==0.8.20.0
+gunicorn==23.0.0
 idna==3.8
 libsass==0.23.0
+packaging==24.1
 pillow==10.4.0
 rcssmin==1.1.2
 requests==2.32.3
