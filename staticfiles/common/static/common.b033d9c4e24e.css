@@ -1,0 +1,38 @@
+body {
+  font-family: "Hina Mincho", system-ui;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: #E9E9E9;
+  z-index: 1000;
+}
+
+body.sticky-active {
+  padding-top: 150px; /* ヘッダの高さに合わせて調整 */
+}
+
+.title {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.title__overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  text-align: center;
+}
+
+.title__main {
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.title__sub {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}

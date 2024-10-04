@@ -1,0 +1,488 @@
+@charset "UTF-8";
+body {
+  font-family: "Hina Mincho", system-ui;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: #E9E9E9;
+  z-index: 1000;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.main_h {
+  position: fixed;
+  top: 0px;
+  max-height: 70px;
+  z-index: 999;
+  width: 100%;
+  padding-top: 17px;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s;
+  opacity: 0;
+  top: -100px;
+  padding-bottom: 6px;
+  font-family: "Montserrat", sans-serif;
+}
+.main_h.sticky {
+  background-color: rgba(255, 255, 255, 0.93);
+  opacity: 1;
+  top: 0px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.header__nav {
+  float: right;
+  width: 60%;
+}
+.header__nav ul {
+  padding-right: 50px;
+  list-style: none;
+  overflow: hidden;
+  text-align: right;
+  float: right;
+}
+.header__nav ul li {
+  display: inline-block;
+  margin-left: 35px;
+  line-height: 1.5;
+}
+.header__nav ul li a {
+  color: #888888;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 22px;
+  top: 0;
+  width: 30px;
+  transition: all 200ms ease-in;
+}
+.mobile-toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}
+@media only screen and (max-width: 766px) {
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+.top {
+  padding-top: 80px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+.top__name {
+  font-family: "Nunito Sans";
+  font-weight: 600;
+  font-size: 4rem;
+  color: white;
+  position: absolute;
+  left: 40%;
+  transform: translate(-50%, -110%);
+  z-index: 2;
+}
+.top__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+  max-width: 1400px;
+  width: 90%;
+  height: 800px;
+}
+.top__left, .top__right {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+.top__left {
+  width: 70%;
+  padding-right: 15px; /* 左側の画像の余白 */
+}
+.top__right {
+  width: 30%;
+}
+.top__image-left, .top__image-right {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.top__vertical-left, .top__vertical-right {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.top__vertical-left {
+  font-family: "Zen Kaku Gothic New";
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
+  letter-spacing: 0.6em;
+  color: black;
+  left: -28px;
+  writing-mode: vertical-rl;
+  height: 100%;
+}
+.top__vertical-right {
+  font-family: Roboto;
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: transparent;
+  -webkit-text-stroke: 3px rgb(255, 255, 255);
+  right: -41px;
+  writing-mode: vertical-lr;
+}
+@media screen and (max-width: 428px) {
+  .top__name {
+    font-size: 1.6rem;
+    content: "Kaizaki Maria";
+    text-align: center;
+    margin: 0 auto;
+  }
+  .top__vertical-left, .top__vertical-right {
+    display: none;
+  }
+  .top__right {
+    display: none;
+  }
+  .top__inner {
+    justify-content: center;
+  }
+  .top__left {
+    width: 50%;
+    padding-right: 0;
+  }
+}
+
+.introduce {
+  padding: 80px 0 100px 0;
+}
+@media screen and (max-width: 428px) {
+  .introduce {
+    padding-bottom: 100px;
+  }
+}
+.introduce__inner {
+  display: flex;
+  justify-content: center; /* 全体を中央揃え */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  position: relative;
+}
+.introduce__image {
+  flex: 1;
+  max-width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+}
+.introduce__image img {
+  width: auto;
+  height: auto;
+  max-width: 70%; /* 画像がコンテナの幅を超えないように */
+  max-height: 70%; /* 画像がコンテナの高さを超えないように */
+  -o-object-fit: contain;
+     object-fit: contain; /* アスペクト比を保ちながら画像を表示 */
+  margin: 0 auto; /* 画像を中央に配置 */
+}
+.introduce__sentence {
+  flex: 1;
+  max-width: 50%; /* テキスト部分は最大幅50%に */
+  padding-left: 20px;
+  color: #333;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 60%;
+  white-space: nowrap;
+}
+.introduce__sentence .title {
+  font-family: "Noto Sans";
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #111;
+  letter-spacing: 0.11em;
+}
+@media screen and (max-width: 428px) {
+  .introduce__sentence .title {
+    font-size: 2rem;
+  }
+}
+.introduce__sentence .introduce__jpn {
+  font-family: "Noto Sans";
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.introduce__sentence .introduce__eng {
+  font-family: "Noto Serif", serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+.gallery {
+  padding: 100px 250px;
+}
+@media screen and (max-width: 428px) {
+  .gallery {
+    padding: 100px 20px;
+  }
+}
+.gallery__title {
+  font-size: 2.5rem;
+}
+.gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
+}
+.gallery .gallery-item {
+  width: 100%;
+  padding-bottom: 80%;
+  position: relative;
+}
+.gallery .gallery-item a, .gallery .gallery-item video, .gallery .gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery .gallery-item img {
+  border-radius: 5px;
+}
+.gallery .gallery-item video {
+  border-radius: 5px;
+}
+
+.news {
+  padding: 100px 250px;
+}
+@media screen and (max-width: 428px) {
+  .news {
+    padding: 100px 20px;
+  }
+}
+.news__title {
+  font-size: 2.5rem;
+}
+.news p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 20px;
+}
+.news ul {
+  list-style: none;
+  padding: 0;
+}
+.news ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.news ul li .news-row {
+  display: flex;
+}
+.news ul li .news-date {
+  flex: 0 0 40%;
+  text-align: center;
+}
+.news ul li .news-content {
+  flex: 0 0 60%;
+}
+
+.all-view {
+  text-align: right;
+  margin-top: 20px;
+}
+.all-view a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+.all-view a:hover {
+  color: #555;
+}
+.all-view a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: background-color 0.3s;
+}
+.all-view a:hover::after {
+  background-color: #555;
+}
+
+.mobile-menu {
+  position: fixed;
+  right: 0;
+  top: 60px;
+  width: 300px;
+}
+.mobile-menu .logo {
+  padding: 0 40px;
+  font-size: 38px;
+}
+.mobile-menu__btn {
+  background-color: unset;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+}
+@media screen and (min-width: 960px) {
+  .mobile-menu__btn {
+    display: none;
+  }
+}
+.mobile-menu__btn > span {
+  background-color: black;
+  width: 35px;
+  height: 2px;
+  display: block;
+  margin-bottom: 9px;
+  transition: transform 0.7s;
+}
+.mobile-menu__btn > span:last-child {
+  margin-bottom: 0;
+}
+.mobile-menu__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s;
+  cursor: pointer;
+  z-index: 200;
+}
+.mobile-menu__main {
+  padding: 0;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+.mobile-menu__item {
+  list-style: none;
+  display: block;
+  transform: translate3d(0, 0, -1000px);
+  padding: 0 40px;
+  transition: transform 0.3s, opacity 0.2s;
+  opacity: 0;
+}
+.mobile-menu__link {
+  display: block;
+  margin-top: 30px;
+  color: black;
+  text-decoration: none !important;
+}
+
+.menu-open #container {
+  transform: translate(-300px, 60px);
+  box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+}
+.menu-open .mobile-menu__cover {
+  opacity: 1;
+  visibility: visible;
+}
+.menu-open .mobile-menu__item {
+  transform: none;
+  opacity: 1;
+}
+.menu-open .mobile-menu__item:nth-child(1) {
+  transition-delay: 0.07s;
+}
+.menu-open .mobile-menu__item:nth-child(2) {
+  transition-delay: 0.14s;
+}
+.menu-open .mobile-menu__item:nth-child(3) {
+  transition-delay: 0.21s;
+}
+.menu-open .mobile-menu__item:nth-child(4) {
+  transition-delay: 0.28s;
+}
+.menu-open .mobile-menu__item:nth-child(5) {
+  transition-delay: 0.35s;
+}
+.menu-open .mobile-menu__btn > span {
+  background-color: black;
+}
+.menu-open .mobile-menu__btn > span:nth-child(1) {
+  transition-delay: 70ms;
+  transform: translateY(11px) rotate(135deg);
+}
+.menu-open .mobile-menu__btn > span:nth-child(2) {
+  transition-delay: 0s;
+  transform: translateX(-18px) scaleX(0);
+}
+.menu-open .mobile-menu__btn > span:nth-child(3) {
+  transition-delay: 140ms;
+  transform: translateY(-11px) rotate(-135deg);
+}
+
+.hero {
+  padding-left: 120px;
+}
+.hero .swiper {
+  width: 100%;
+  height: 500px; /* スライドショーの高さを設定 */
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+.hero .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 5px; /* 画像周りに丸みを加える */
+  overflow: hidden; /* 画像がスライド枠をはみ出さないようにする */
+}
+.hero .swiper-slide img {
+  width: 100%; /* 画像をスライドの幅いっぱいに表示 */
+  height: 100%; /* 画像をスライドの高さいっぱいに表示 */
+  -o-object-fit: cover;
+     object-fit: cover; /* トリミングしてフィットさせる */
+}/*# sourceMappingURL=style.css.map */

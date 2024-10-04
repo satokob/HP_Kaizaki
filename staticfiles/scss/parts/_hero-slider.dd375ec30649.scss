@@ -1,0 +1,30 @@
+.hero {
+  padding-left: 120px;
+  .swiper {
+    width: 100%;
+    height: 500px; /* スライドショーの高さを設定 */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-wrapper{
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 5px; /* 画像周りに丸みを加える */
+    overflow: hidden; /* 画像がスライド枠をはみ出さないようにする */
+  }
+
+  .swiper-slide img {
+    width: 100%; /* 画像をスライドの幅いっぱいに表示 */
+    height: 100%; /* 画像をスライドの高さいっぱいに表示 */
+    object-fit: cover; /* トリミングしてフィットさせる */
+  }
+}
